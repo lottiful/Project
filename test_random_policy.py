@@ -16,7 +16,7 @@ import pdb
 
 import gym
 
-from env.custom_hopper import *
+from env_modified.custom_hopper import *
 
 
 def main():

@@ -56,7 +56,7 @@ def main():
 
 
     model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=train_env, verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(500000)) # total_timesteps=int(1e10)
+    model.learn(total_timesteps=int(5000)) # total_timesteps=int(1e10)
 
     model.save("ppo_model_")
 

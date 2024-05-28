@@ -7,6 +7,8 @@ import gym
 from env.custom_hopper import *
 from stable_baselines3 import PPO
 
+import wandb
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', default=None, type=str, help='Model path')
@@ -21,8 +23,8 @@ args = parse_args()
 
 def main():
 
-	env = gym.make('CustomHopper-source-v0')
-	# env = gym.make('CustomHopper-target-v0')
+	#env = gym.make('CustomHopper-source-v0')
+	env = gym.make('CustomHopper-target-v0')
 
 	print('Action space:', env.action_space)
 	print('State space:', env.observation_space)
@@ -31,7 +33,9 @@ def main():
 	observation_space_dim = env.observation_space.shape[-1]
 	action_space_dim = env.action_space.shape[-1]
 
+	wandb.init(project="calGTT", name="sb3")
 	model = PPO.load("ppo_model_")
+	#model = PPO.load("ppo_model_UDR_")
 
 	for episode in range(args.episodes):
 		done = False
@@ -49,7 +53,11 @@ def main():
 
 			test_reward += reward
 
+		wandb.log({"Reward": test_reward})
+
 		print(f"Episode: {episode} | Return: {test_reward}")
+	
+	wandb.finish()
 	
 
 if __name__ == '__main__':

@@ -48,12 +48,12 @@ def main():
     #
 
 	critic = True
+	i = 0
 
 	for episode in range(args.n_episodes):
 		done = False
 		train_reward = 0
 		state = env.reset()  # Reset the environment and observe the initial state
-		i = 0
 		start_time = timer()
 
 		while not done:  # Loop until the episode is over
@@ -70,9 +70,9 @@ def main():
 				if done == True:
 					agent.update_policy(critic)
 			else:
-				if (i%5 == 0) and (i!=0): #chiedere se bisogna dopo 50 step azzerare il vettore degli stati e ripartire in modo che calcoli la loss con la nuova politica
-							#oppure dobbiamo tenere conto anche della traiettoria di stati ottenuta con la vecchia politica?
+				if (i%20 == 0) and (i!=0): #update the policy every 50 steps, a prescindere dall'episodio (i cumulativa esterna)
 					agent.update_policy(critic)
+					#DA VERIFICARE SE FUNZIONA STA COSA DELL'AGGIORNAMENTO.
 
 			i +=1
 		

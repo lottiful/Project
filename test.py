@@ -7,6 +7,8 @@ import gym
 from env.custom_hopper import *
 from agent import Agent, Policy, Policy_critic
 
+import wandb
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', default=None, type=str, help='Model path')
@@ -36,6 +38,8 @@ def main():
 	policy_critic = Policy_critic(observation_space_dim, action_space_dim)
 	policy.load_state_dict(torch.load(args.model), strict=True)
 
+	wandb.init(project="calGTT", name="AC")
+
 
 	agent = Agent(policy, policy_critic, device=args.device)
 
@@ -54,9 +58,11 @@ def main():
 				env.render()
 
 			test_reward += reward
-
+		
+		wandb.log({"Reward": test_reward})
 		print(f"Episode: {episode} | Return: {test_reward}")
 	
+	wandb.finish()
 
 if __name__ == '__main__':
 	main()

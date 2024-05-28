@@ -24,20 +24,16 @@ def parse_args():
 
 args = parse_args()
 
-#if args.train is None or args.source_log_path is None or args.target_log_path is None:
 if args.train is None:
     exit('Arguments required, run --help for more information')
-
-
-N_ENVS = os.cpu_count()
-MAX_EPS = args.episodes
-ENV_EPS = int(np.ceil(MAX_EPS / N_ENVS))
 
 
 def _create_source_env():
 
     source_env = gym.make('CustomHopper-source-v0')
+    
 
+    #sample dei parametri da mettere dentro a custom hopper
     source_env.sim.model.body_mass[2] = np.random.uniform(source_env.sim.model.body_mass[2]-0.5, source_env.sim.model.body_mass[2] + 0.5)
     source_env.sim.model.body_mass[3] = np.random.uniform(source_env.sim.model.body_mass[3]-0.5, source_env.sim.model.body_mass[3] + 0.5)
     source_env.sim.model.body_mass[4] = np.random.uniform(source_env.sim.model.body_mass[4]-0.5, source_env.sim.model.body_mass[4] + 0.5)
@@ -53,17 +49,18 @@ def main():
     parser.add_argument('--train', type=str, default='source', help='Specify training environment: source or target')
     args = parser.parse_args()
 
-    """
-    source_env = _create_source_env()  # sets the train to source
+    source_env = gym.make('CustomHopper-source-v0')
+   
+    #source_env.rand = True
+    print(source_env.rand)
 
     print('State space:', source_env.observation_space)  # state-space
     print('Action space:', source_env.action_space)  # action-space
     print('Dynamics parameters:', source_env.get_parameters())  # masses of each link of the Hopper
-    """
 
     #CHIEDERE SE STA COSA HA SENSO: env=_create_source_env()
-    model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=_create_source_env(), verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(5000)) # total_timesteps=int(1e10)
+    model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
+    model.learn(total_timesteps=int(500000)) # total_timesteps=int(1e10)
 
     model.save("ppo_model_UDR_")
 

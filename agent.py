@@ -97,16 +97,6 @@ class Policy_critic(torch.nn.Module):
 
         sigma = self.sigma_activation(self.sigma)
         normal_dist = Normal(action_mean, sigma)
-
-        """
-        if self.randomized:
-            sigma = self.sigma_activation(self.sigma)
-            normal_dist = Normal(action_mean, sigma)
-            return normal_dist
-        else:
-            return action_mean
-
-        """
         
         return action_mean
 
@@ -172,9 +162,6 @@ class Agent(object):
 
         if critic is True:
             j = 0
-            #print(action_log_probs)
-            #print(states)
-            #print(next_states)
             for log_prob, state, next_state in zip(action_log_probs, states, next_states):
                 v_t =  self.policy_critic(state)
                 v_next = self.policy_critic(next_state)
@@ -190,8 +177,6 @@ class Agent(object):
             actor_loss = actor_loss/j
             critic_loss = critic_loss/j
 
-            #da capire se va bene gestire le due reti cosi oppure va messa la somma
-            #total_loss = critic_loss + actor_loss 
             self.optimizer.zero_grad()
             self.optimizer_critic.zero_grad()
             critic_loss.backward()
