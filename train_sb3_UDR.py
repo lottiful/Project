@@ -5,7 +5,7 @@
     pipeline with an RL algorithm of your choice between PPO and SAC.
 """
 import gym
-from env.custom_hopper import *
+from env_modified.custom_hopper import *
 import torch
 
 from stable_baselines3 import PPO
@@ -58,9 +58,8 @@ def main():
     print('Action space:', source_env.action_space)  # action-space
     print('Dynamics parameters:', source_env.get_parameters())  # masses of each link of the Hopper
 
-    #CHIEDERE SE STA COSA HA SENSO: env=_create_source_env()
     model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(500000)) # total_timesteps=int(1e10)
+    model.learn(total_timesteps=int(600000)) # total_timesteps=int(1e10)
 
     model.save("ppo_model_UDR_")
 

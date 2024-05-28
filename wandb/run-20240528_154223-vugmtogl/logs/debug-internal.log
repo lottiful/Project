@@ -1,0 +1,275 @@
+2024-05-28 15:42:23,331 INFO    StreamThr :90038 [internal.py:wandb_internal():88] W&B internal server running at pid: 90038, started at: 2024-05-28 15:42:23.328545
+2024-05-28 15:42:23,342 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status
+2024-05-28 15:42:23,352 INFO    WriterThread:90038 [datastore.py:open_for_write():87] open: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/run-vugmtogl.wandb
+2024-05-28 15:42:23,355 DEBUG   SenderThread:90038 [sender.py:send():378] send: header
+2024-05-28 15:42:23,376 DEBUG   SenderThread:90038 [sender.py:send():378] send: run
+2024-05-28 15:42:24,018 INFO    SenderThread:90038 [dir_watcher.py:__init__():211] watching files in: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files
+2024-05-28 15:42:24,019 INFO    SenderThread:90038 [sender.py:_start_run_threads():1126] run started: vugmtogl with start time 1716903743.32888
+2024-05-28 15:42:24,064 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: check_version
+2024-05-28 15:42:24,065 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: check_version
+2024-05-28 15:42:24,205 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: run_start
+2024-05-28 15:42:24,207 DEBUG   HandlerThread:90038 [system_info.py:__init__():26] System info init
+2024-05-28 15:42:24,208 DEBUG   HandlerThread:90038 [system_info.py:__init__():41] System info init done
+2024-05-28 15:42:24,208 INFO    HandlerThread:90038 [system_monitor.py:start():194] Starting system monitor
+2024-05-28 15:42:24,208 INFO    SystemMonitor:90038 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-28 15:42:24,210 INFO    HandlerThread:90038 [system_monitor.py:probe():214] Collecting system info
+2024-05-28 15:42:24,212 INFO    SystemMonitor:90038 [interfaces.py:start():188] Started cpu monitoring
+2024-05-28 15:42:24,215 INFO    SystemMonitor:90038 [interfaces.py:start():188] Started disk monitoring
+2024-05-28 15:42:24,218 INFO    SystemMonitor:90038 [interfaces.py:start():188] Started memory monitoring
+2024-05-28 15:42:24,219 INFO    SystemMonitor:90038 [interfaces.py:start():188] Started network monitoring
+2024-05-28 15:42:24,254 DEBUG   HandlerThread:90038 [system_info.py:probe():150] Probing system
+2024-05-28 15:42:24,390 DEBUG   HandlerThread:90038 [system_info.py:_probe_git():135] Probing git
+2024-05-28 15:42:24,418 DEBUG   HandlerThread:90038 [system_info.py:_probe_git():143] Probing git done
+2024-05-28 15:42:24,418 DEBUG   HandlerThread:90038 [system_info.py:probe():198] Probing system done
+2024-05-28 15:42:24,419 DEBUG   HandlerThread:90038 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2024-05-28T13:42:24.254678', 'startedAt': '2024-05-28T13:42:23.301419', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'test_sb3.py', 'codePathLocal': 'test_sb3.py', 'codePath': 'test_sb3.py', 'git': {'remote': 'https://github.com/lottiful/Project.git', 'commit': '110d3c7897b6abdb0e7f1f52a3fac0e1421891c3'}, 'email': 'alessia.tortone@gmail.com', 'root': '/home/alessiatortone/ProjectMLDL', 'host': 'DESKTOP-C7KS0F6', 'username': 'alessiatortone', 'executable': '/home/alessiatortone/miniconda3/envs/mldl/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2112.007, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}, {'current': 2112.007, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 10.478805541992188}}, 'memory': {'total': 3.720775604248047}}
+2024-05-28 15:42:24,419 INFO    HandlerThread:90038 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-28 15:42:24,419 INFO    HandlerThread:90038 [system_monitor.py:probe():227] Publishing system info
+2024-05-28 15:42:24,419 DEBUG   HandlerThread:90038 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-05-28 15:42:25,021 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/conda-environment.yaml
+2024-05-28 15:42:27,019 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/conda-environment.yaml
+2024-05-28 15:42:27,156 DEBUG   HandlerThread:90038 [system_info.py:_save_conda():222] Saving conda packages done
+2024-05-28 15:42:27,157 INFO    HandlerThread:90038 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-28 15:42:27,169 DEBUG   SenderThread:90038 [sender.py:send():378] send: files
+2024-05-28 15:42:27,170 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-05-28 15:42:27,320 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: python_packages
+2024-05-28 15:42:27,321 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: python_packages
+2024-05-28 15:42:27,323 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-28 15:42:27,324 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: stop_status
+2024-05-28 15:42:27,540 DEBUG   SenderThread:90038 [sender.py:send():378] send: telemetry
+2024-05-28 15:42:27,889 INFO    wandb-upload_0:90038 [upload_job.py:push():130] Uploaded file /tmp/tmpmpao6458wandb/l03tzya7-wandb-metadata.json
+2024-05-28 15:42:28,020 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/requirements.txt
+2024-05-28 15:42:28,021 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:28,021 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-metadata.json
+2024-05-28 15:42:28,545 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:29,388 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:29,393 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:29,395 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:29,401 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:30,021 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:30,022 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:30,074 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:30,075 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:30,076 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:30,077 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:30,663 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:30,665 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:30,666 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:30,667 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:31,023 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:32,023 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:32,136 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:32,138 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:32,139 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:32,139 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:33,024 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:34,024 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:34,141 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:34,670 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:34,672 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:34,673 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:34,674 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:35,025 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:36,025 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:37,185 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:37,187 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:37,188 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:37,189 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:38,027 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:39,191 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:40,028 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:40,506 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:40,508 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:40,509 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:40,509 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:41,029 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:42,039 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:42,321 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-28 15:42:42,323 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: stop_status
+2024-05-28 15:42:44,516 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:49,026 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:49,028 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:49,029 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:49,032 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:49,044 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:50,034 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:50,044 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:54,475 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:42:54,477 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:42:54,478 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:42:54,481 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:42:55,047 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:42:55,493 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:42:56,047 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/config.yaml
+2024-05-28 15:42:56,048 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:42:57,378 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-28 15:42:57,379 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: stop_status
+2024-05-28 15:43:01,617 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:04,573 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:43:04,575 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:43:04,576 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:43:04,579 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:43:05,052 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:43:06,053 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:43:06,618 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:11,621 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:12,378 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-28 15:43:12,379 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: stop_status
+2024-05-28 15:43:15,998 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:43:16,000 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:43:16,000 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:43:16,003 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:43:16,061 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:43:17,048 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:18,063 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:43:22,049 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:24,220 DEBUG   SystemMonitor:90038 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-05-28 15:43:24,222 DEBUG   SenderThread:90038 [sender.py:send():378] send: stats
+2024-05-28 15:43:24,741 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-28 15:43:24,744 DEBUG   SenderThread:90038 [sender.py:send():378] send: history
+2024-05-28 15:43:24,745 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: summary_record
+2024-05-28 15:43:24,745 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:43:25,067 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:43:26,068 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:43:27,426 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:27,426 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-28 15:43:27,427 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: stop_status
+2024-05-28 15:43:32,742 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:37,744 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:38,885 DEBUG   SenderThread:90038 [sender.py:send():378] send: exit
+2024-05-28 15:43:38,886 INFO    SenderThread:90038 [sender.py:send_exit():585] handling exit code: 0
+2024-05-28 15:43:38,890 INFO    SenderThread:90038 [sender.py:send_exit():587] handling runtime: 74
+2024-05-28 15:43:38,890 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:43:38,891 INFO    SenderThread:90038 [sender.py:send_exit():593] send defer
+2024-05-28 15:43:38,892 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,892 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 0
+2024-05-28 15:43:38,893 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,893 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-05-28 15:43:38,893 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 1
+2024-05-28 15:43:38,894 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,894 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 1
+2024-05-28 15:43:38,895 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,895 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-05-28 15:43:38,896 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 2
+2024-05-28 15:43:38,897 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,897 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 2
+2024-05-28 15:43:38,897 INFO    HandlerThread:90038 [system_monitor.py:finish():203] Stopping system monitor
+2024-05-28 15:43:38,898 DEBUG   SystemMonitor:90038 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-05-28 15:43:38,900 INFO    HandlerThread:90038 [interfaces.py:finish():200] Joined cpu monitor
+2024-05-28 15:43:38,900 DEBUG   SystemMonitor:90038 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-05-28 15:43:38,901 INFO    HandlerThread:90038 [interfaces.py:finish():200] Joined disk monitor
+2024-05-28 15:43:38,903 INFO    HandlerThread:90038 [interfaces.py:finish():200] Joined memory monitor
+2024-05-28 15:43:38,904 INFO    HandlerThread:90038 [interfaces.py:finish():200] Joined network monitor
+2024-05-28 15:43:38,905 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,905 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-05-28 15:43:38,905 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 3
+2024-05-28 15:43:38,906 DEBUG   SenderThread:90038 [sender.py:send():378] send: stats
+2024-05-28 15:43:38,906 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,907 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 3
+2024-05-28 15:43:38,907 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,908 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-05-28 15:43:38,908 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 4
+2024-05-28 15:43:38,908 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,908 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 4
+2024-05-28 15:43:38,909 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,909 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-05-28 15:43:38,909 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 5
+2024-05-28 15:43:38,909 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,909 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 5
+2024-05-28 15:43:38,911 DEBUG   SenderThread:90038 [sender.py:send():378] send: summary
+2024-05-28 15:43:38,912 INFO    SenderThread:90038 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-28 15:43:38,912 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,912 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-05-28 15:43:38,913 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 6
+2024-05-28 15:43:38,913 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,913 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 6
+2024-05-28 15:43:38,914 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,914 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-05-28 15:43:38,915 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 7
+2024-05-28 15:43:38,915 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: status_report
+2024-05-28 15:43:38,916 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:38,916 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 7
+2024-05-28 15:43:38,917 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:38,918 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-05-28 15:43:39,075 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:43:39,650 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 8
+2024-05-28 15:43:39,650 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:39,651 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 8
+2024-05-28 15:43:39,651 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:39,652 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-05-28 15:43:39,652 INFO    SenderThread:90038 [job_builder.py:build():432] Attempting to build job artifact
+2024-05-28 15:43:39,652 INFO    SenderThread:90038 [job_builder.py:_get_source_type():565] is repo sourced job
+2024-05-28 15:43:39,729 INFO    SenderThread:90038 [job_builder.py:build():541] adding wandb-job metadata file
+2024-05-28 15:43:39,743 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 9
+2024-05-28 15:43:39,745 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:39,745 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 9
+2024-05-28 15:43:39,747 DEBUG   SenderThread:90038 [sender.py:send():378] send: artifact
+2024-05-28 15:43:39,885 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-28 15:43:40,076 INFO    Thread-12 :90038 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:43:40,591 INFO    SenderThread:90038 [sender.py:send_artifact():1467] sent artifact job-https___github.com_lottiful_Project.git_test_sb3.py - {'id': 'QXJ0aWZhY3Q6ODUyMzI4MjQ5', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE3OTc4MjAxMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODUyMzI4MjQ5', 'versionIndex': 2}}}
+2024-05-28 15:43:40,592 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:40,593 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-05-28 15:43:40,593 INFO    SenderThread:90038 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-05-28 15:43:41,078 INFO    SenderThread:90038 [dir_watcher.py:finish():388] scan: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files
+2024-05-28 15:43:41,079 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/config.yaml config.yaml
+2024-05-28 15:43:41,079 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/requirements.txt requirements.txt
+2024-05-28 15:43:41,079 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/conda-environment.yaml conda-environment.yaml
+2024-05-28 15:43:41,080 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-metadata.json wandb-metadata.json
+2024-05-28 15:43:41,080 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json wandb-summary.json
+2024-05-28 15:43:41,080 INFO    SenderThread:90038 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log output.log
+2024-05-28 15:43:41,081 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 10
+2024-05-28 15:43:41,081 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: poll_exit
+2024-05-28 15:43:41,082 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:41,082 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 10
+2024-05-28 15:43:41,104 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:41,112 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-05-28 15:43:41,112 INFO    SenderThread:90038 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-28 15:43:41,500 INFO    wandb-upload_1:90038 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/config.yaml
+2024-05-28 15:43:41,631 INFO    wandb-upload_3:90038 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/conda-environment.yaml
+2024-05-28 15:43:41,661 INFO    wandb-upload_2:90038 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/requirements.txt
+2024-05-28 15:43:41,722 INFO    wandb-upload_5:90038 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/output.log
+2024-05-28 15:43:41,742 INFO    wandb-upload_4:90038 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/files/wandb-summary.json
+2024-05-28 15:43:41,888 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-28 15:43:41,891 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: poll_exit
+2024-05-28 15:43:41,944 INFO    Thread-11 :90038 [sender.py:transition_state():613] send defer: 11
+2024-05-28 15:43:41,948 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:41,948 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 11
+2024-05-28 15:43:41,952 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:41,952 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-05-28 15:43:41,952 INFO    SenderThread:90038 [file_pusher.py:join():175] waiting for file pusher
+2024-05-28 15:43:41,954 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 12
+2024-05-28 15:43:41,955 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:41,955 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 12
+2024-05-28 15:43:41,957 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:41,957 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-05-28 15:43:41,957 INFO    SenderThread:90038 [file_stream.py:finish():601] file stream finish called
+2024-05-28 15:43:42,649 INFO    SenderThread:90038 [file_stream.py:finish():605] file stream finish is done
+2024-05-28 15:43:42,649 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 13
+2024-05-28 15:43:42,650 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:42,651 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 13
+2024-05-28 15:43:42,652 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:42,652 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-05-28 15:43:42,653 INFO    SenderThread:90038 [sender.py:transition_state():613] send defer: 14
+2024-05-28 15:43:42,654 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: defer
+2024-05-28 15:43:42,655 INFO    HandlerThread:90038 [handler.py:handle_request_defer():184] handle defer: 14
+2024-05-28 15:43:42,658 DEBUG   SenderThread:90038 [sender.py:send():378] send: final
+2024-05-28 15:43:42,658 DEBUG   SenderThread:90038 [sender.py:send():378] send: footer
+2024-05-28 15:43:42,659 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: defer
+2024-05-28 15:43:42,659 INFO    SenderThread:90038 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-05-28 15:43:42,662 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-28 15:43:42,667 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: poll_exit
+2024-05-28 15:43:42,668 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-28 15:43:42,674 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: server_info
+2024-05-28 15:43:42,675 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: poll_exit
+2024-05-28 15:43:42,681 DEBUG   SenderThread:90038 [sender.py:send_request():405] send_request: server_info
+2024-05-28 15:43:42,683 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: get_summary
+2024-05-28 15:43:42,698 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: sampled_history
+2024-05-28 15:43:42,702 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: internal_messages
+2024-05-28 15:43:42,862 INFO    MainThread:90038 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-05-28 15:43:42,863 INFO    MainThread:90038 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-05-28 15:43:42,864 INFO    MainThread:90038 [wandb_run.py:_footer_sync_info():3953] logging synced files
+2024-05-28 15:43:42,866 DEBUG   HandlerThread:90038 [handler.py:handle_request():158] handle_request: shutdown
+2024-05-28 15:43:42,867 INFO    HandlerThread:90038 [handler.py:finish():882] shutting down handler
+2024-05-28 15:43:43,680 INFO    WriterThread:90038 [datastore.py:close():296] close: /home/alessiatortone/ProjectMLDL/wandb/run-20240528_154223-vugmtogl/run-vugmtogl.wandb
+2024-05-28 15:43:43,863 INFO    SenderThread:90038 [sender.py:finish():1545] shutting down sender
+2024-05-28 15:43:43,863 INFO    SenderThread:90038 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-28 15:43:43,863 INFO    SenderThread:90038 [file_pusher.py:join():175] waiting for file pusher
