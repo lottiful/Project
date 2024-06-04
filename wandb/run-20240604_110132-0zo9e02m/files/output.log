@@ -1,8 +1,0 @@
--1
--12.440283372194207
-Traceback (most recent call last):
-  File "test_sb3.py", line 64, in <module>
-    main()
-  File "test_sb3.py", line 47, in main
-    action, _ = model.predict(state, determinist = True) #si potrebbe mettere: determinist = True
-TypeError: predict() got an unexpected keyword argument 'determinist'

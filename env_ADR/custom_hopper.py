@@ -28,7 +28,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             self.sim.model.body_mass[1] -= 1.0
 
     def modify_xml_for_inclination(self):
-        with open('/home/alessiatortone/ProjectMLDL/env_modified/assets/hopper.xml', 'r') as file:
+        with open('env_ADR/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
             # Calcola il quaternione per l'inclinazione
@@ -41,7 +41,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
 
 
-        with open('/home/alessiatortone/ProjectMLDL/env_ADR/assets/hopper.xml', 'w') as file:
+        with open('env_ADR/assets/hopper.xml', 'w') as file:
             file.write(xml_content)
 
 
@@ -177,11 +177,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
             if recent_performance > self.performance_threshold:
                 # Increase randomization
-                self.randomization_scale *= 1.1
+                self.randomization_scale *= 1.05
                 self.randomization_scale = min(self.randomization_scale, 3)
             else:
                 # Decrease randomization
-                self.randomization_scale *= 0.9
+                self.randomization_scale *= 0.95
                 self.randomization_scale = max(self.randomization_scale, 0.5)
 
 

@@ -12,15 +12,6 @@ from .mujoco_env import MujocoEnv
 
 import re
 
-#DOMANDA ESISTENZIALE
-#Stiamo davvero allenando a salire? perche noi modifichiamo il file ma poi non è che lui tutte le volte rilegge il file xml. 
-#Lui lo legge all'inizio e poi non ci entra più, quindi tanto vale averlo modificato.
-#per ora quindi l'unico test che possiamo fare è quello di allenarlo con un certo angolo e poi vedere se riesce a testare su un altro angolo, 
-#però noln credo che così stiamo facendo la randomization.
-
-#chiedere agli altri come volevano fare per modificare a ogni episodio l'altezza dell'ostacolo, 
-#che dovrebbe essere anche quella una modifica a ogni episodio dell'ambiente e quindi analoga alla nostra.
-
 class CustomHopper(MujocoEnv, utils.EzPickle):
     def __init__(self, domain=None):
         MujocoEnv.__init__(self, 4)
@@ -34,7 +25,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
 
     def modify_xml_for_inclination(self):
-        with open('/home/alessiatortone/ProjectMLDL/env_modified/assets/hopper.xml', 'r') as file:
+        with open('env_modified/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
             # Calcola il quaternione per l'inclinazione
@@ -48,7 +39,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
 
 
-        with open('/home/alessiatortone/ProjectMLDL/env_modified/assets/hopper.xml', 'w') as file:
+        with open('env_modified/assets/hopper.xml', 'w') as file:
             file.write(xml_content)
 
 

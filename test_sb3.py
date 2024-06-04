@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument('--model', default=None, type=str, help='Model path')
     parser.add_argument('--device', default='cpu', type=str, help='network device [cpu, cuda]')
     parser.add_argument('--render', default=True, action='store_true', help='Render the simulator')
-    parser.add_argument('--episodes', default=10, type=int, help='Number of test episodes')
+    parser.add_argument('--episodes', default=50, type=int, help='Number of test episodes')
 
     return parser.parse_args()
 
@@ -36,6 +36,7 @@ def main():
 	wandb.init(project="calGTT", name="sb3")
 	#model = PPO.load("ppo_model_")
 	model = PPO.load("ppo_model_UDR_")
+	#model = PPO.load("ppo_model_UDR_")
 
 	for episode in range(args.episodes):
 		done = False

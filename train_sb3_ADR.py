@@ -52,7 +52,7 @@ def main():
     model.learn(total_timesteps=int(1000000)) # total_timesteps=int(1e10)
     
 
-    model.save("ppo_model_UDR_")
+    model.save("ppo_model_ADR_")
 
     wandb.init(project="calGTT", name="ADR")
     for i in range(len(source_env.performance_history)):
