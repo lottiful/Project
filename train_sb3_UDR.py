@@ -46,7 +46,7 @@ def main():
     print('Dynamics parameters:', source_env.get_parameters())  # masses of each link of the Hopper
 
     model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(300000)) # total_timesteps=int(1e10)
+    model.learn(total_timesteps=int(6000)) # total_timesteps=int(1e10)
 
     model.save("ppo_model_UDR_")
 

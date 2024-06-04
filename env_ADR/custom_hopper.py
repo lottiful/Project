@@ -186,10 +186,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
 
             # update the treshold
-            if recent_performance > self.performance_threshold + 100
-                self.performance_threshold +=30
-            elif recent_performance < self.performance_threshold - 100: 
-                self.performance_threshold -=30 
+            if recent_performance > self.performance_threshold + 50:
+                self.performance_threshold +=25
+            elif recent_performance < self.performance_threshold - 50: 
+                self.performance_threshold -=25
+
             self.performance_threshold = max(0, self.performance_threshold)
 
             self.randomization_scale = np.clip(self.randomization_scale, 0.1, 2.0)  # Keep within bounds

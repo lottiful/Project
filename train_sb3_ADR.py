@@ -16,6 +16,8 @@ import os
 import numpy as np
 import argparse
 
+import wandb
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--train', type=str)
@@ -37,7 +39,7 @@ def main():
     args = parser.parse_args()
 
     source_env = gym.make('CustomHopper-source-v0')
-    source_env.initialize_randomization_parameters(performance_threshold=100, randomization_scale=1.0)
+    source_env.initialize_randomization_parameters(performance_threshold=50, randomization_scale=1.0)
 
     #source_env.rand = True
     print(source_env.rand)
@@ -46,10 +48,16 @@ def main():
     print('Action space:', source_env.action_space)  # action-space
     print('Dynamics parameters:', source_env.get_parameters())  # masses of each link of the Hopper
 
-    model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(6000)) # total_timesteps=int(1e10)
+    model = PPO('MlpPolicy', n_steps=1024, batch_size=128, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
+    model.learn(total_timesteps=int(1000000)) # total_timesteps=int(1e10)
+    
 
     model.save("ppo_model_UDR_")
+
+    wandb.init(project="calGTT", name="ADR")
+    for i in range(len(source_env.performance_history)):
+        wandb.log({"Reward": source_env.performance_history[i]})
+    wandb.finish()
 
 if __name__ == '__main__':
     main()

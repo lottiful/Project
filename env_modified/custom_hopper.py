@@ -60,8 +60,6 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.old_inclination_angle = self.inclination_angle
         self.inclination_angle = np.random.uniform(-20, 0)
         self.modify_xml_for_inclination()
-        print(self.old_inclination_angle)
-        print(self.inclination_angle)
 
 
     def sample_parameters(self):
