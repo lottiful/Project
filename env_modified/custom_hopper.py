@@ -12,6 +12,14 @@ from .mujoco_env import MujocoEnv
 
 import re
 
+#DOMANDA ESISTENZIALE
+#Stiamo davvero allenando a salire? perche noi modifichiamo il file ma poi non è che lui tutte le volte rilegge il file xml. 
+#Lui lo legge all'inizio e poi non ci entra più, quindi tanto vale averlo modificato.
+#per ora quindi l'unico test che possiamo fare è quello di allenarlo con un certo angolo e poi vedere se riesce a testare su un altro angolo, 
+#però noln credo che così stiamo facendo la randomization.
+
+#chiedere agli altri come volevano fare per modificare a ogni episodio l'altezza dell'ostacolo, 
+#che dovrebbe essere anche quella una modifica a ogni episodio dell'ambiente e quindi analoga alla nostra.
 
 class CustomHopper(MujocoEnv, utils.EzPickle):
     def __init__(self, domain=None):
@@ -19,13 +27,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         utils.EzPickle.__init__(self)
 
         self.original_masses = np.copy(self.sim.model.body_mass[1:])    # Default link masses
-        self.rand = False
+        self.rand = True
 
         if domain == 'source':  # Source environment has an imprecise torso mass (1kg shift)
             self.sim.model.body_mass[1] -= 1.0
 
-        self.inclination_angle = 10  # Angolo di inclinazione del piano
-        self.modify_xml_for_inclination()
 
     def modify_xml_for_inclination(self):
         with open('/home/alessiatortone/ProjectMLDL/env_modified/assets/hopper.xml', 'r') as file:
@@ -37,13 +43,10 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             x = 0
             y = np.sin(alpha / 2)
             z = 0
-            print (w)
-            print(y)
 
             #xml_content = xml_content.replace(r'\bquat=\w*', f'quat="{w} {x} {y} {z}"')
             xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
 
-            print(xml_content)
 
         with open('/home/alessiatortone/ProjectMLDL/env_modified/assets/hopper.xml', 'w') as file:
             file.write(xml_content)
@@ -52,6 +55,13 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
     def set_random_parameters(self):
         """Set random masses"""
         self.set_parameters(self.sample_parameters())
+
+        """Set random inclination angle"""
+        self.old_inclination_angle = self.inclination_angle
+        self.inclination_angle = np.random.uniform(-20, 0)
+        self.modify_xml_for_inclination()
+        print(self.old_inclination_angle)
+        print(self.inclination_angle)
 
 
     def sample_parameters(self):
@@ -79,7 +89,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.sim.model.body_mass[1:] = task
 
 
-    def step(self, a, angle = 10):
+    def step(self, a):
         """Step the simulation to the next timestep
 
         Parameters
@@ -93,13 +103,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
         #reward = (posafter - posbefore) / self.dt
-        #chiedere se le height sono le altezze deil baricentro del bastone
         reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
         reward += alive_bonus
         reward -= 1e-3 * np.square(a).sum()
         s = self.state_vector()
-        #and (height > .7 + sin(np.deg2rad(self.inclination_angle))*)
-        alpha = np.deg2rad(angle)
+        alpha = np.deg2rad(self.inclination_angle) #non so se mettere inclination_angle o old_inclination_angle
         done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
         ob = self._get_obs()
 
@@ -122,6 +130,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         
         if self.rand is True:
             self.set_random_parameters()
+
+            self.build_model()
 
         return self._get_obs()
 

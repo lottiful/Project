@@ -21,13 +21,15 @@ from env_modified.custom_hopper import *
 
 def main():
 	env = gym.make('CustomHopper-source-v0')
-	# env = gym.make('CustomHopper-target-v0')
+	#env = gym.make('CustomHopper-target-v0')
+
+	state = env.reset()
 
 	print('State space:', env.observation_space) # state-space
 	print('Action space:', env.action_space) # action-space
 	print('Dynamics parameters:', env.get_parameters()) # masses of each link of the Hopper
 
-	n_episodes = 500
+	n_episodes = 50
 	render = True
 
 	for episode in range(n_episodes):

@@ -1,0 +1,294 @@
+2024-06-04 11:02:12,126 INFO    StreamThr :20898 [internal.py:wandb_internal():88] W&B internal server running at pid: 20898, started at: 2024-06-04 11:02:12.124891
+2024-06-04 11:02:12,131 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status
+2024-06-04 11:02:12,137 INFO    WriterThread:20898 [datastore.py:open_for_write():87] open: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/run-9sb32d9h.wandb
+2024-06-04 11:02:12,138 DEBUG   SenderThread:20898 [sender.py:send():378] send: header
+2024-06-04 11:02:12,148 DEBUG   SenderThread:20898 [sender.py:send():378] send: run
+2024-06-04 11:02:12,579 INFO    SenderThread:20898 [dir_watcher.py:__init__():211] watching files in: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files
+2024-06-04 11:02:12,580 INFO    SenderThread:20898 [sender.py:_start_run_threads():1126] run started: 9sb32d9h with start time 1717491732.124765
+2024-06-04 11:02:12,592 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: check_version
+2024-06-04 11:02:12,592 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: check_version
+2024-06-04 11:02:12,684 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: run_start
+2024-06-04 11:02:12,685 DEBUG   HandlerThread:20898 [system_info.py:__init__():26] System info init
+2024-06-04 11:02:12,685 DEBUG   HandlerThread:20898 [system_info.py:__init__():41] System info init done
+2024-06-04 11:02:12,685 INFO    HandlerThread:20898 [system_monitor.py:start():194] Starting system monitor
+2024-06-04 11:02:12,685 INFO    SystemMonitor:20898 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-04 11:02:12,686 INFO    HandlerThread:20898 [system_monitor.py:probe():214] Collecting system info
+2024-06-04 11:02:12,688 INFO    SystemMonitor:20898 [interfaces.py:start():188] Started cpu monitoring
+2024-06-04 11:02:12,690 INFO    SystemMonitor:20898 [interfaces.py:start():188] Started disk monitoring
+2024-06-04 11:02:12,692 INFO    SystemMonitor:20898 [interfaces.py:start():188] Started memory monitoring
+2024-06-04 11:02:12,693 INFO    SystemMonitor:20898 [interfaces.py:start():188] Started network monitoring
+2024-06-04 11:02:12,700 DEBUG   HandlerThread:20898 [system_info.py:probe():150] Probing system
+2024-06-04 11:02:12,724 DEBUG   HandlerThread:20898 [system_info.py:_probe_git():135] Probing git
+2024-06-04 11:02:12,736 DEBUG   HandlerThread:20898 [system_info.py:_probe_git():143] Probing git done
+2024-06-04 11:02:12,736 DEBUG   HandlerThread:20898 [system_info.py:probe():198] Probing system done
+2024-06-04 11:02:12,737 DEBUG   HandlerThread:20898 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2024-06-04T09:02:12.700305', 'startedAt': '2024-06-04T09:02:12.104054', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'test_sb3.py', 'codePathLocal': 'test_sb3.py', 'codePath': 'test_sb3.py', 'git': {'remote': 'https://github.com/lottiful/Project.git', 'commit': 'adaa7158cdfb23895bf6878b8d61a1011d6ed04e'}, 'email': 'alessia.tortone@gmail.com', 'root': '/home/alessiatortone/ProjectMLDL', 'host': 'DESKTOP-C7KS0F6', 'username': 'alessiatortone', 'executable': '/home/alessiatortone/miniconda3/envs/mldl/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2112.006, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}, {'current': 2112.006, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 10.501296997070312}}, 'memory': {'total': 3.7207717895507812}}
+2024-06-04 11:02:12,737 INFO    HandlerThread:20898 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-04 11:02:12,737 INFO    HandlerThread:20898 [system_monitor.py:probe():227] Publishing system info
+2024-06-04 11:02:12,737 DEBUG   HandlerThread:20898 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-06-04 11:02:13,580 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/conda-environment.yaml
+2024-06-04 11:02:14,360 DEBUG   HandlerThread:20898 [system_info.py:_save_conda():222] Saving conda packages done
+2024-06-04 11:02:14,360 INFO    HandlerThread:20898 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-04 11:02:14,367 DEBUG   SenderThread:20898 [sender.py:send():378] send: files
+2024-06-04 11:02:14,367 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-06-04 11:02:14,440 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-04 11:02:14,440 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: python_packages
+2024-06-04 11:02:14,441 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 11:02:14,441 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 11:02:14,580 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/conda-environment.yaml
+2024-06-04 11:02:14,580 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-metadata.json
+2024-06-04 11:02:14,581 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/requirements.txt
+2024-06-04 11:02:14,713 DEBUG   SenderThread:20898 [sender.py:send():378] send: telemetry
+2024-06-04 11:02:15,043 INFO    wandb-upload_0:20898 [upload_job.py:push():130] Uploaded file /tmp/tmpd2t_h806wandb/j9cuxyxb-wandb-metadata.json
+2024-06-04 11:02:15,214 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:15,218 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:15,219 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:15,224 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:15,580 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:15,581 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_created():271] file/dir created: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:16,124 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:16,127 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:16,129 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:16,130 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:16,581 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:17,141 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:17,581 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:17,621 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:17,623 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:17,624 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:17,626 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:18,413 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:18,414 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:18,415 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:18,416 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:18,582 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:19,070 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:19,072 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:19,073 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:19,074 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:19,582 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:19,582 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:19,802 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:19,803 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:19,804 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:19,815 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:20,481 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:20,483 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:20,484 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:20,486 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:20,583 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:21,144 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:21,146 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:21,146 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:21,147 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:21,583 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:21,583 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:21,709 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:21,710 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:21,711 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:21,714 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:22,583 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:22,909 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:23,180 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:23,182 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:23,183 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:23,183 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:23,584 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:23,585 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:24,079 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:24,082 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:24,082 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:24,084 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:24,585 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:25,368 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:25,371 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:25,371 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:25,372 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:25,586 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:25,586 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:26,314 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:26,316 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:26,317 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:26,319 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:26,607 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:27,607 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:28,345 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:28,954 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:28,955 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:28,955 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:28,956 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:29,609 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:29,609 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:29,681 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 11:02:29,681 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 11:02:30,984 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:30,986 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:30,986 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:30,988 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:31,609 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:31,609 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:33,610 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:33,839 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:33,841 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:33,841 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:33,841 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:33,843 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:34,610 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:35,611 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:36,047 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:36,048 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:36,048 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:36,049 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:36,611 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:37,612 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:38,408 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:38,410 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:38,410 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:38,412 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:38,612 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:39,855 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:39,911 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 11:02:39,912 DEBUG   SenderThread:20898 [sender.py:send():378] send: history
+2024-06-04 11:02:39,912 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 11:02:39,914 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:40,862 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:40,864 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:44,199 DEBUG   SenderThread:20898 [sender.py:send():378] send: exit
+2024-06-04 11:02:44,200 INFO    SenderThread:20898 [sender.py:send_exit():585] handling exit code: 0
+2024-06-04 11:02:44,221 INFO    SenderThread:20898 [sender.py:send_exit():587] handling runtime: 31
+2024-06-04 11:02:44,221 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:44,222 INFO    SenderThread:20898 [sender.py:send_exit():593] send defer
+2024-06-04 11:02:44,223 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,225 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 0
+2024-06-04 11:02:44,226 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,227 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-06-04 11:02:44,228 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 1
+2024-06-04 11:02:44,232 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,232 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 1
+2024-06-04 11:02:44,232 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,233 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-06-04 11:02:44,233 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 2
+2024-06-04 11:02:44,233 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,233 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 2
+2024-06-04 11:02:44,234 INFO    HandlerThread:20898 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-04 11:02:44,240 DEBUG   SystemMonitor:20898 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-04 11:02:44,247 INFO    HandlerThread:20898 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-04 11:02:44,248 DEBUG   SystemMonitor:20898 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-04 11:02:44,251 INFO    HandlerThread:20898 [interfaces.py:finish():200] Joined disk monitor
+2024-06-04 11:02:44,253 DEBUG   SystemMonitor:20898 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-04 11:02:44,254 INFO    HandlerThread:20898 [interfaces.py:finish():200] Joined memory monitor
+2024-06-04 11:02:44,267 INFO    HandlerThread:20898 [interfaces.py:finish():200] Joined network monitor
+2024-06-04 11:02:44,277 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,277 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-06-04 11:02:44,277 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 3
+2024-06-04 11:02:44,277 DEBUG   SenderThread:20898 [sender.py:send():378] send: stats
+2024-06-04 11:02:44,277 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,279 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 3
+2024-06-04 11:02:44,279 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,279 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-06-04 11:02:44,280 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 4
+2024-06-04 11:02:44,280 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,280 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 4
+2024-06-04 11:02:44,282 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,282 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-06-04 11:02:44,282 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 5
+2024-06-04 11:02:44,282 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,282 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 5
+2024-06-04 11:02:44,282 DEBUG   SenderThread:20898 [sender.py:send():378] send: summary
+2024-06-04 11:02:44,283 INFO    SenderThread:20898 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 11:02:44,283 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,283 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-06-04 11:02:44,283 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 6
+2024-06-04 11:02:44,283 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,283 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 6
+2024-06-04 11:02:44,284 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,284 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-06-04 11:02:44,290 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 11:02:44,555 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 7
+2024-06-04 11:02:44,556 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,556 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 7
+2024-06-04 11:02:44,557 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,557 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-06-04 11:02:44,863 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/config.yaml
+2024-06-04 11:02:44,865 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:44,878 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 8
+2024-06-04 11:02:44,879 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:44,879 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 8
+2024-06-04 11:02:44,880 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:44,880 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-06-04 11:02:44,886 INFO    SenderThread:20898 [job_builder.py:build():432] Attempting to build job artifact
+2024-06-04 11:02:44,905 INFO    SenderThread:20898 [job_builder.py:_get_source_type():565] is repo sourced job
+2024-06-04 11:02:45,110 INFO    SenderThread:20898 [job_builder.py:build():541] adding wandb-job metadata file
+2024-06-04 11:02:45,161 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 9
+2024-06-04 11:02:45,162 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:45,162 DEBUG   SenderThread:20898 [sender.py:send():378] send: artifact
+2024-06-04 11:02:45,162 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 9
+2024-06-04 11:02:45,209 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-04 11:02:45,864 INFO    Thread-12 :20898 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:46,084 INFO    SenderThread:20898 [sender.py:send_artifact():1467] sent artifact job-https___github.com_lottiful_Project.git_test_sb3.py - {'id': 'QXJ0aWZhY3Q6ODU4NjgwNTQ5', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE3OTc4MjAxMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODU5NzAwNzEy', 'versionIndex': 4}}}
+2024-06-04 11:02:46,084 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:46,084 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-06-04 11:02:46,084 INFO    SenderThread:20898 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-04 11:02:46,874 INFO    SenderThread:20898 [dir_watcher.py:finish():388] scan: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files
+2024-06-04 11:02:46,877 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/config.yaml config.yaml
+2024-06-04 11:02:46,890 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/requirements.txt requirements.txt
+2024-06-04 11:02:46,903 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/conda-environment.yaml conda-environment.yaml
+2024-06-04 11:02:46,906 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-metadata.json wandb-metadata.json
+2024-06-04 11:02:46,907 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json wandb-summary.json
+2024-06-04 11:02:46,907 INFO    SenderThread:20898 [dir_watcher.py:finish():402] scan save: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log output.log
+2024-06-04 11:02:46,913 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 10
+2024-06-04 11:02:46,916 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: poll_exit
+2024-06-04 11:02:46,920 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:46,933 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 10
+2024-06-04 11:02:46,938 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:46,948 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-06-04 11:02:46,948 INFO    SenderThread:20898 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-04 11:02:47,232 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-04 11:02:47,259 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: poll_exit
+2024-06-04 11:02:47,348 INFO    wandb-upload_1:20898 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/config.yaml
+2024-06-04 11:02:47,399 INFO    wandb-upload_0:20898 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/requirements.txt
+2024-06-04 11:02:47,563 INFO    wandb-upload_4:20898 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/wandb-summary.json
+2024-06-04 11:02:47,575 INFO    wandb-upload_2:20898 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/conda-environment.yaml
+2024-06-04 11:02:47,585 INFO    wandb-upload_5:20898 [upload_job.py:push():130] Uploaded file /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/files/output.log
+2024-06-04 11:02:47,787 INFO    Thread-11 :20898 [sender.py:transition_state():613] send defer: 11
+2024-06-04 11:02:47,790 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:47,791 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 11
+2024-06-04 11:02:47,793 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:47,793 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-06-04 11:02:47,793 INFO    SenderThread:20898 [file_pusher.py:join():175] waiting for file pusher
+2024-06-04 11:02:47,807 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 12
+2024-06-04 11:02:47,807 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:47,808 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 12
+2024-06-04 11:02:47,808 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:47,809 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-06-04 11:02:47,809 INFO    SenderThread:20898 [file_stream.py:finish():601] file stream finish called
+2024-06-04 11:02:47,985 INFO    SenderThread:20898 [file_stream.py:finish():605] file stream finish is done
+2024-06-04 11:02:47,986 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 13
+2024-06-04 11:02:47,987 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:47,987 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 13
+2024-06-04 11:02:47,989 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:47,990 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-06-04 11:02:47,993 INFO    SenderThread:20898 [sender.py:transition_state():613] send defer: 14
+2024-06-04 11:02:47,995 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: defer
+2024-06-04 11:02:47,995 INFO    HandlerThread:20898 [handler.py:handle_request_defer():184] handle defer: 14
+2024-06-04 11:02:47,997 DEBUG   SenderThread:20898 [sender.py:send():378] send: final
+2024-06-04 11:02:47,997 DEBUG   SenderThread:20898 [sender.py:send():378] send: footer
+2024-06-04 11:02:47,997 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: defer
+2024-06-04 11:02:47,998 INFO    SenderThread:20898 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-06-04 11:02:48,006 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-04 11:02:48,006 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-04 11:02:48,010 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: server_info
+2024-06-04 11:02:48,011 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: poll_exit
+2024-06-04 11:02:48,012 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: poll_exit
+2024-06-04 11:02:48,012 DEBUG   SenderThread:20898 [sender.py:send_request():405] send_request: server_info
+2024-06-04 11:02:48,018 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: get_summary
+2024-06-04 11:02:48,020 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: sampled_history
+2024-06-04 11:02:48,021 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-04 11:02:48,179 INFO    MainThread:20898 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-06-04 11:02:48,186 INFO    MainThread:20898 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-06-04 11:02:48,190 INFO    MainThread:20898 [wandb_run.py:_footer_sync_info():3953] logging synced files
+2024-06-04 11:02:48,199 DEBUG   HandlerThread:20898 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-04 11:02:48,200 INFO    HandlerThread:20898 [handler.py:finish():882] shutting down handler
+2024-06-04 11:02:49,014 INFO    WriterThread:20898 [datastore.py:close():296] close: /home/alessiatortone/ProjectMLDL/wandb/run-20240604_110212-9sb32d9h/run-9sb32d9h.wandb
+2024-06-04 11:02:49,175 INFO    SenderThread:20898 [sender.py:finish():1545] shutting down sender
+2024-06-04 11:02:49,175 INFO    SenderThread:20898 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-04 11:02:49,175 INFO    SenderThread:20898 [file_pusher.py:join():175] waiting for file pusher

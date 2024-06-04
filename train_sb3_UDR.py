@@ -26,19 +26,6 @@ args = parse_args()
 
 if args.train is None:
     exit('Arguments required, run --help for more information')
-
-
-def _create_source_env():
-
-    source_env = gym.make('CustomHopper-source-v0')
-    
-
-    #sample dei parametri da mettere dentro a custom hopper
-    source_env.sim.model.body_mass[2] = np.random.uniform(source_env.sim.model.body_mass[2]-0.5, source_env.sim.model.body_mass[2] + 0.5)
-    source_env.sim.model.body_mass[3] = np.random.uniform(source_env.sim.model.body_mass[3]-0.5, source_env.sim.model.body_mass[3] + 0.5)
-    source_env.sim.model.body_mass[4] = np.random.uniform(source_env.sim.model.body_mass[4]-0.5, source_env.sim.model.body_mass[4] + 0.5)
-
-    return source_env
 	
 def main():
     #
@@ -59,7 +46,7 @@ def main():
     print('Dynamics parameters:', source_env.get_parameters())  # masses of each link of the Hopper
 
     model = PPO('MlpPolicy', n_steps=1024, batch_size=128, n_epochs=10, learning_rate=0.00025, env=source_env, verbose=1, device='cpu') #learning_rate=0.00025
-    model.learn(total_timesteps=int(600000)) # total_timesteps=int(1e10)
+    model.learn(total_timesteps=int(300000)) # total_timesteps=int(1e10)
 
     model.save("ppo_model_UDR_")
 
