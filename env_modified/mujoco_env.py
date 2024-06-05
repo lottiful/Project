@@ -51,8 +51,11 @@ class MujocoEnv(gym.Env):
         self.init_qpos = self.sim.data.qpos.ravel().copy()
         self.init_qvel = self.sim.data.qvel.ravel().copy()
 
-        self.inclination_angle = -1
-        self.old_inclination_angle = -1
+        #flag for domain randomization
+        self.rand_masses = False
+        self.rand_angle = False
+
+        self.inclination_angle = 0
 
         self._set_action_space()
 

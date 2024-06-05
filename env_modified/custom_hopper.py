@@ -18,13 +18,15 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         utils.EzPickle.__init__(self)
 
         self.original_masses = np.copy(self.sim.model.body_mass[1:])    # Default link masses
-        self.rand = True
+
+        self.randomization_range = 0.5
 
         if domain == 'source':  # Source environment has an imprecise torso mass (1kg shift)
             self.sim.model.body_mass[1] -= 1.0
 
 
     def modify_xml_for_inclination(self):
+        print("entra nella modifica xml")
         with open('env_modified/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
@@ -35,7 +37,6 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             y = np.sin(alpha / 2)
             z = 0
 
-            #xml_content = xml_content.replace(r'\bquat=\w*', f'quat="{w} {x} {y} {z}"')
             xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
 
 
@@ -45,12 +46,13 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
     def set_random_parameters(self):
         """Set random masses"""
-        self.set_parameters(self.sample_parameters())
+        if self.rand_masses is True:
+            self.set_parameters(self.sample_parameters())
 
         """Set random inclination angle"""
-        self.old_inclination_angle = self.inclination_angle
-        self.inclination_angle = np.random.uniform(-20, 0)
-        self.modify_xml_for_inclination()
+        if self.rand_angle == True:
+            self.inclination_angle = np.random.uniform(-20, 0)
+            self.modify_xml_for_inclination()
 
 
     def sample_parameters(self):
@@ -60,11 +62,9 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         # TASK 6: implement domain randomization. Remember to sample new dynamics parameter
         #         at the start of each training episode.
 
-        a = np.random.uniform(self.original_masses[1] - 0.5, self.original_masses[1] + 0.5)
-        b = np.random.uniform(self.original_masses[2] - 0.5, self.original_masses[2] + 0.5)
-        c = np.random.uniform(self.original_masses[3] - 0.5, self.original_masses[3] + 0.5)
+        new_masses = [np.random.uniform(m - self.randomization_range, m + self.randomization_range) for m in self.original_masses[1:]]
 
-        return [self.original_masses[0], a, b, c]
+        return [self.original_masses[0]] + new_masses
 
 
     def get_parameters(self):
@@ -91,13 +91,22 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.do_simulation(a, self.frame_skip)
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
-        #reward = (posafter - posbefore) / self.dt
-        reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
+
+        #reward is given by the horizontal speed is the plane is flat, by the diagonal speed if the plane is inclined.
+        if self.rand_angle is False:
+            reward = (posafter - posbefore) / self.dt
+        else:
+            reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
         reward += alive_bonus
         reward -= 1e-3 * np.square(a).sum()
         s = self.state_vector()
-        alpha = np.deg2rad(self.inclination_angle) #non so se mettere inclination_angle o old_inclination_angle
-        done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
+
+        if self.rand_angle is False:
+            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7) and (abs(ang) < .2))
+        else:
+            alpha = np.deg2rad(self.inclination_angle)
+            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
+        
         ob = self._get_obs()
 
         return ob, reward, done, {}
@@ -117,10 +126,12 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         qvel = self.init_qvel + self.np_random.uniform(low=-.005, high=.005, size=self.model.nv)
         self.set_state(qpos, qvel)
         
-        if self.rand is True:
+        if self.rand_masses is True:
             self.set_random_parameters()
 
-            self.build_model()
+            #Read the xml file again e recreate the environment only when the inclination angle is changed
+            if self.rand_angle is True:
+                self.build_model()
 
         return self._get_obs()
 

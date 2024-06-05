@@ -23,8 +23,8 @@ args = parse_args()
 
 def main():
 
-	env = gym.make('CustomHopper-source-v0')
-	#env = gym.make('CustomHopper-target-v0')
+	#env = gym.make('CustomHopper-source-v0')
+	env = gym.make('CustomHopper-target-v0')
 
 	print('Action space:', env.action_space)
 	print('State space:', env.observation_space)
@@ -34,9 +34,11 @@ def main():
 	action_space_dim = env.action_space.shape[-1]
 
 	wandb.init(project="calGTT", name="sb3")
+
+	#choose the model to test
 	#model = PPO.load("ppo_model_")
 	model = PPO.load("ppo_model_UDR_")
-	#model = PPO.load("ppo_model_UDR_")
+	#model = PPO.load("ppo_model_ADR_")
 
 	for episode in range(args.episodes):
 		done = False
@@ -45,7 +47,7 @@ def main():
 
 		while not done:
 
-			action, _ = model.predict(state) #si potrebbe mettere: determinist = True (non e qua)
+			action, _ = model.predict(state, deterministic=True) #si potrebbe mettere: determinist = True (non e qua)
 
 			state, reward, done, info = env.step(action)
 
@@ -57,7 +59,7 @@ def main():
 		wandb.log({"Reward": test_reward})
 
 		print(f"Episode: {episode} | Return: {test_reward}")
-	
+
 	wandb.finish()
 	
 
