@@ -4,7 +4,7 @@ import argparse
 import torch
 import gym
 
-from env.custom_hopper import *
+from env_test.custom_hopper import *
 from agent import Agent, Policy, Policy_critic
 
 import wandb
@@ -38,6 +38,8 @@ def main():
 	policy_critic = Policy_critic(observation_space_dim, action_space_dim)
 	policy.load_state_dict(torch.load(args.model), strict=True)
 
+
+	#Cambiare il name in base a cosa si sta testando, così rimangono tutte le tabelle con i nomi giusti.
 	wandb.init(project="calGTT", name="AC")
 
 

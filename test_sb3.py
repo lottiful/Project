@@ -4,7 +4,7 @@ import argparse
 import torch
 import gym
 
-from env_modified.custom_hopper import *
+from env_test.custom_hopper import *
 from stable_baselines3 import PPO
 
 import wandb
@@ -23,8 +23,8 @@ args = parse_args()
 
 def main():
 
-	#env = gym.make('CustomHopper-source-v0')
-	env = gym.make('CustomHopper-target-v0')
+	env = gym.make('CustomHopper-source-v0')
+	#env = gym.make('CustomHopper-target-v0')
 
 	print('Action space:', env.action_space)
 	print('State space:', env.observation_space)
@@ -36,8 +36,8 @@ def main():
 	wandb.init(project="calGTT", name="sb3")
 
 	#choose the model to test
-	#model = PPO.load("ppo_model_")
-	model = PPO.load("ppo_model_UDR_")
+	model = PPO.load("ppo_model_")
+	#model = PPO.load("ppo_model_UDR_")
 	#model = PPO.load("ppo_model_ADR_")
 
 	for episode in range(args.episodes):

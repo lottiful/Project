@@ -6,7 +6,7 @@ import argparse
 import torch
 import gym
 
-from env.custom_hopper import *
+from env_test.custom_hopper import *
 from agent import Agent, Policy, Policy_critic
 
 from timeit import default_timer as timer
@@ -47,6 +47,7 @@ def main():
     # TASK 2 and 3: interleave data collection to policy updates
     #
 
+	#Reinforce -> critic = False; Actor-critic -> critic = True
 	critic = True
 	i = 0
 

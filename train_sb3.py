@@ -5,7 +5,7 @@
     pipeline with an RL algorithm of your choice between PPO and SAC.
 """
 import gym
-from env_modified.custom_hopper import *
+from env_randomization.custom_hopper import *
 import torch
 
 from stable_baselines3 import PPO
@@ -34,7 +34,8 @@ def main():
     #
 
     #noi avevamo learning rate = 0.0025
-    learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4]
+    #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4]
+    learning_rate_values = [0.0025]
     #ent_coef ?
 
     models_performances = []
@@ -47,6 +48,8 @@ def main():
     parser.add_argument('--train', type=str, default='source', help='Specify training environment: source or target')
     args = parser.parse_args()
 
+    rand_masses = True
+
     for learning_rate in learning_rate_values:
         if args.train == 'source':
             train_env = gym.make('CustomHopper-source-v0')
@@ -57,8 +60,18 @@ def main():
         print('Action space:', train_env.action_space)  # action-space
         print('Dynamics parameters:', train_env.get_parameters())  # masses of each link of the Hopper
 
+        #PARAMETRI 
+        #decidere quale tipo di domain randomization implementare
+        rand_masses = False
+        rand_angle = False
+        randomization_range = 0.5
+        #decidere se utilizzare un angolo specifico di partenza
+        inclination_angle = 0
+
+        train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range)
+
         model = PPO('MlpPolicy', n_steps=1024, batch_size=128, learning_rate=learning_rate, env=train_env, verbose=1, device='cpu') #learning_rate=0.00025
-        model.learn(total_timesteps=int(500000))
+        model.learn(total_timesteps=int(6000))
 
         #If the model is trained with the randomization of the angle, reset the xml file with starting angle uqual to 0.
         if train_env.rand_angle is True:

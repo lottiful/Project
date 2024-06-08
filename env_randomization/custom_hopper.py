@@ -50,7 +50,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             self.set_parameters(self.sample_parameters())
 
         """Set random inclination angle"""
-        if self.rand_angle == True:
+        if self.rand_angle is True:
             self.inclination_angle = np.random.uniform(-20, 0)
             self.modify_xml_for_inclination()
 
@@ -112,6 +112,18 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         return ob, reward, done, {}
 
 
+    def modify_rand_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range):
+        self.rand_masses = rand_masses
+        self.rand_angle = rand_angle
+        self.inclination_angle = inclination_angle
+        self.randomization_range = randomization_range
+
+        if self.inclination_angle != 0:
+            self.modify_xml_for_inclination()
+            self.build_model()
+
+
+
     def _get_obs(self):
         """Get current state"""
         return np.concatenate([
@@ -126,12 +138,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         qvel = self.init_qvel + self.np_random.uniform(low=-.005, high=.005, size=self.model.nv)
         self.set_state(qpos, qvel)
         
-        if self.rand_masses is True:
-            self.set_random_parameters()
+        self.set_random_parameters()
 
-            #Read the xml file again e recreate the environment only when the inclination angle is changed
-            if self.rand_angle is True:
-                self.build_model()
+        #Read the xml file again e recreate the environment only when the inclination angle is changed
+        if self.rand_angle is True:
+            self.build_model()
 
         return self._get_obs()
 

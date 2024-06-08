@@ -5,7 +5,7 @@
     pipeline with an RL algorithm of your choice between PPO and SAC.
 """
 import gym
-from env_modified.custom_hopper import *
+from env_randomization.custom_hopper import *
 import torch
 
 from stable_baselines3 import PPO
