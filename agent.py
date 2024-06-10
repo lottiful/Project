@@ -136,6 +136,7 @@ class Agent(object):
         #Parametri
         b = 0 #senza baseline
         # b = 20   #con baseline
+        adaptive_baseline = False
 
         discounted_rewards = discount_rewards(rewards, self.gamma)
         actor_loss = 0
@@ -146,9 +147,14 @@ class Agent(object):
             #parte reinforce
             print(action_log_probs)
             print(discounted_rewards)
-            for log_prob, actor_G in zip(action_log_probs, discounted_rewards):
+            tot_r = 0
+            i = 1
+            for log_prob, actor_G, r in zip(action_log_probs, discounted_rewards, rewards):
+                if adaptive_baseline is True:
+                    tot_r += r
+                    b = tot_r / i #da vedere se e giusta sta cosa o se va calcolata prima e dentro sto for rimane fissa
                 loss += -log_prob * (actor_G - b) #probabilità tra 0 e 1, logaritmo neg, metto meno
-
+                i +=1
             self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()

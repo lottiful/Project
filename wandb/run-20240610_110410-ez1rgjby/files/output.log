@@ -1,0 +1,12 @@
+
+entra nella modifica xml
+Traceback (most recent call last):
+  File "test_sb3.py", line 73, in <module>
+    main()
+  File "test_sb3.py", line 58, in main
+    state, reward, done, info = env.step(action)
+  File "/home/alessiatortone/miniconda3/envs/mldl/lib/python3.7/site-packages/gym/wrappers/time_limit.py", line 18, in step
+    observation, reward, done, info = self.env.step(action)
+  File "/home/alessiatortone/ProjectMLDL/env_test/custom_hopper.py", line 89, in step
+    reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
+NameError: name 'height_before' is not defined

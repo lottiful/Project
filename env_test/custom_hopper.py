@@ -10,6 +10,8 @@ import gym
 from gym import utils
 from .mujoco_env import MujocoEnv
 
+import re
+
 
 class CustomHopper(MujocoEnv, utils.EzPickle):
     def __init__(self, domain=None):
@@ -21,6 +23,29 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         if domain == 'source':  # Source environment has an imprecise torso mass (1kg shift)
             self.sim.model.body_mass[1] -= 1.0
 
+    def modify_xml_for_inclination(self):
+        print("entra nella modifica xml")
+        with open('env_test/assets/hopper.xml', 'r') as file:
+            xml_content = file.read()
+
+            # Calcola il quaternione per l'inclinazione
+            alpha = np.deg2rad(self.inclination_angle)
+            w = np.cos(alpha / 2)
+            x = 0
+            y = np.sin(alpha / 2)
+            z = 0
+
+            xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
+
+        with open('env_test/assets/hopper.xml', 'w') as file:
+            file.write(xml_content)
+
+    def modify_inclination(self, inclination_angle):
+        self.inclination_angle = inclination_angle
+
+        if self.inclination_angle != 0:
+            self.modify_xml_for_inclination()
+            self.build_model()
 
     def set_random_parameters(self):
         """Set random masses"""
@@ -55,14 +80,24 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             action to be taken at the current timestep
         """
         posbefore = self.sim.data.qpos[0]
+        height_before = self.sim.data.qpos[1]
         self.do_simulation(a, self.frame_skip)
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
-        reward = (posafter - posbefore) / self.dt
+        if self.inclination_angle == 0:
+            reward = (posafter - posbefore) / self.dt
+        else:
+            reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
         reward += alive_bonus
         reward -= 1e-3 * np.square(a).sum()
         s = self.state_vector()
-        done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7) and (abs(ang) < .2))
+
+        if self.inclination_angle == 0:
+            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7) and (abs(ang) < .2))
+        else:
+            alpha = np.deg2rad(self.inclination_angle)
+            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
+        
         ob = self._get_obs()
 
         return ob, reward, done, {}

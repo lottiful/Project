@@ -53,6 +53,8 @@ class MujocoEnv(gym.Env):
 
         self._set_action_space()
 
+        self.inclination_angle = 0
+
         action = self.action_space.sample()
         observation, _reward, done, _info = self.step(action)
         assert not done

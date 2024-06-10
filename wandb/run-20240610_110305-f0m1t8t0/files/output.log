@@ -1,0 +1,12 @@
+
+entra nella modifica xml
+Traceback (most recent call last):
+  File "test_sb3.py", line 73, in <module>
+    main()
+  File "test_sb3.py", line 46, in main
+    env.modify_inclination(inclination_angle)
+  File "/home/alessiatortone/ProjectMLDL/env_test/custom_hopper.py", line 45, in modify_inclination
+    self.modify_xml_for_inclination()
+  File "/home/alessiatortone/ProjectMLDL/env_test/custom_hopper.py", line 36, in modify_xml_for_inclination
+    xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
+NameError: name 're' is not defined

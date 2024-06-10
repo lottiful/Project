@@ -7,6 +7,8 @@ import gym
 from env_test.custom_hopper import *
 from stable_baselines3 import PPO
 
+import numpy as np
+
 import wandb
 
 def parse_args():
@@ -40,6 +42,13 @@ def main():
 	#model = PPO.load("ppo_model_UDR_")
 	#model = PPO.load("ppo_model_ADR_")
 
+	#parametro di inclinazione dell'angolo
+	inclination_angle = -10
+	if inclination_angle != 0:
+		env.modify_inclination(inclination_angle)
+
+	list_rewards = []
+
 	for episode in range(args.episodes):
 		done = False
 		test_reward = 0
@@ -58,9 +67,20 @@ def main():
 
 		wandb.log({"Reward": test_reward})
 
+		list_rewards.append(test_reward)
+
 		print(f"Episode: {episode} | Return: {test_reward}")
+	
+	mean_reward = np.mean(list_rewards)
+	wandb.log({"Reward": mean_reward})
+	std_reward = np.std(list_rewards)
+
+	print(f"mean reward = {mean_reward}")
+	print(f"std reward = {std_reward}")
 
 	wandb.finish()
+
+
 	
 
 if __name__ == '__main__':

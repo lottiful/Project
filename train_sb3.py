@@ -35,7 +35,7 @@ def main():
 
     #noi avevamo learning rate = 0.0025
     #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4]
-    learning_rate_values = [0.0025]
+    learning_rate_values = [0.00025]
     #ent_coef ?
 
     models_performances = []
@@ -65,13 +65,16 @@ def main():
         rand_masses = False
         rand_angle = False
         randomization_range = 0.5
+        adaptive_rand = False
         #decidere se utilizzare un angolo specifico di partenza
-        inclination_angle = 0
+        inclination_angle = -10
 
-        train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range)
+        n_episodes = 500000
+
+        train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range, adaptive_rand)
 
         model = PPO('MlpPolicy', n_steps=1024, batch_size=128, learning_rate=learning_rate, env=train_env, verbose=1, device='cpu') #learning_rate=0.00025
-        model.learn(total_timesteps=int(6000))
+        model.learn(total_timesteps=int(n_episodes))
 
         #If the model is trained with the randomization of the angle, reset the xml file with starting angle uqual to 0.
         if train_env.rand_angle is True:

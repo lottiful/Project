@@ -27,7 +27,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
     def modify_xml_for_inclination(self):
         print("entra nella modifica xml")
-        with open('env_modified/assets/hopper.xml', 'r') as file:
+        with open('env_randomization/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
             # Calcola il quaternione per l'inclinazione
@@ -40,7 +40,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             xml_content = re.sub(r'quat="[^"]*"', f'quat="{w} {x} {y} {z}"', xml_content)
 
 
-        with open('env_modified/assets/hopper.xml', 'w') as file:
+        with open('env_randomization/assets/hopper.xml', 'w') as file:
             file.write(xml_content)
 
 
@@ -93,7 +93,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         alive_bonus = 1.0
 
         #reward is given by the horizontal speed is the plane is flat, by the diagonal speed if the plane is inclined.
-        if self.rand_angle is False:
+        if self.inclination_angle ==0:
             reward = (posafter - posbefore) / self.dt
         else:
             reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt
@@ -101,22 +101,20 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         reward -= 1e-3 * np.square(a).sum()
         s = self.state_vector()
 
-        if self.rand_angle is False:
-            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7) and (abs(ang) < .2))
-        else:
-            alpha = np.deg2rad(self.inclination_angle)
-            done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
+        alpha = np.deg2rad(self.inclination_angle)
+        done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7 - np.tan(alpha)*posafter) and (abs(ang) < .2))
         
         ob = self._get_obs()
 
         return ob, reward, done, {}
 
 
-    def modify_rand_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range):
+    def modify_rand_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range, adaptive_rand):
         self.rand_masses = rand_masses
         self.rand_angle = rand_angle
         self.inclination_angle = inclination_angle
         self.randomization_range = randomization_range
+        self.adaptive_rand = adaptive_rand
 
         if self.inclination_angle != 0:
             self.modify_xml_for_inclination()
@@ -138,6 +136,9 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         qvel = self.init_qvel + self.np_random.uniform(low=-.005, high=.005, size=self.model.nv)
         self.set_state(qpos, qvel)
         
+        if self.adaptive_rand is True:
+            self.adaptive_randomization()
+
         self.set_random_parameters()
 
         #Read the xml file again e recreate the environment only when the inclination angle is changed
@@ -145,6 +146,40 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             self.build_model()
 
         return self._get_obs()
+
+    def adaptive_randomization(self):
+        """Adaptive domain randomization based on performance feedback"""
+        if len(self.performance_history) > 10:  # Ensure enough data points
+            recent_performance = np.mean(self.performance_history[-10:])
+            #if len(self.performance_history) > 20:
+                #self.performance_threshold = np.mean(self.performance_history[-20:])
+            #print(recent_performance)
+
+            if recent_performance > self.performance_threshold:
+                # Increase randomization
+                self.randomization_scale *= 1.05
+                self.randomization_scale = min(self.randomization_scale, 3)
+            else:
+                # Decrease randomization
+                self.randomization_scale *= 0.95
+                self.randomization_scale = max(self.randomization_scale, 0.5)
+
+
+            # update the treshold
+            if recent_performance > self.performance_threshold + 50:
+                self.performance_threshold +=25
+            elif recent_performance < self.performance_threshold - 50: 
+                self.performance_threshold -=25
+
+            self.performance_threshold = max(0, self.performance_threshold)
+
+            self.randomization_scale = np.clip(self.randomization_scale, 0.1, 2.0)  # Keep within bounds
+
+
+    def initialize_randomization_parameters(self, performance_threshold, randomization_scale=1.0):
+        """Initialize parameters for adaptive randomization"""
+        self.performance_threshold = performance_threshold
+        self.randomization_scale = randomization_scale
 
 
     def viewer_setup(self):
