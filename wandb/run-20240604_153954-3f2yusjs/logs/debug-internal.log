@@ -1,0 +1,277 @@
+2024-06-04 15:39:54,525 INFO    StreamThr :24784 [internal.py:wandb_internal():88] W&B internal server running at pid: 24784, started at: 2024-06-04 15:39:54.514496
+2024-06-04 15:39:54,542 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status
+2024-06-04 15:39:54,573 INFO    WriterThread:24784 [datastore.py:open_for_write():87] open: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/run-3f2yusjs.wandb
+2024-06-04 15:39:54,576 DEBUG   SenderThread:24784 [sender.py:send():378] send: header
+2024-06-04 15:39:54,601 DEBUG   SenderThread:24784 [sender.py:send():378] send: run
+2024-06-04 15:39:55,378 INFO    SenderThread:24784 [dir_watcher.py:__init__():211] watching files in: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files
+2024-06-04 15:39:55,379 INFO    SenderThread:24784 [sender.py:_start_run_threads():1126] run started: 3f2yusjs with start time 1717508394.506096
+2024-06-04 15:39:55,400 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: check_version
+2024-06-04 15:39:55,402 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: check_version
+2024-06-04 15:39:55,751 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: run_start
+2024-06-04 15:39:56,546 DEBUG   HandlerThread:24784 [system_info.py:__init__():26] System info init
+2024-06-04 15:39:56,546 DEBUG   HandlerThread:24784 [system_info.py:__init__():41] System info init done
+2024-06-04 15:39:56,546 INFO    HandlerThread:24784 [system_monitor.py:start():194] Starting system monitor
+2024-06-04 15:39:56,547 INFO    SystemMonitor:24784 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-04 15:39:56,548 INFO    HandlerThread:24784 [system_monitor.py:probe():214] Collecting system info
+2024-06-04 15:39:56,549 INFO    SystemMonitor:24784 [interfaces.py:start():188] Started cpu monitoring
+2024-06-04 15:39:56,551 INFO    SystemMonitor:24784 [interfaces.py:start():188] Started disk monitoring
+2024-06-04 15:39:56,554 INFO    SystemMonitor:24784 [interfaces.py:start():188] Started gpu monitoring
+2024-06-04 15:39:56,556 INFO    SystemMonitor:24784 [interfaces.py:start():188] Started memory monitoring
+2024-06-04 15:39:56,559 INFO    SystemMonitor:24784 [interfaces.py:start():188] Started network monitoring
+2024-06-04 15:39:56,592 DEBUG   HandlerThread:24784 [system_info.py:probe():150] Probing system
+2024-06-04 15:39:56,629 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:39:56,630 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:39:56,712 DEBUG   HandlerThread:24784 [system_info.py:_probe_git():135] Probing git
+2024-06-04 15:39:56,742 DEBUG   HandlerThread:24784 [system_info.py:_probe_git():143] Probing git done
+2024-06-04 15:39:56,743 DEBUG   HandlerThread:24784 [system_info.py:probe():198] Probing system done
+2024-06-04 15:39:56,744 DEBUG   HandlerThread:24784 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2024-06-04T13:39:56.592955', 'startedAt': '2024-06-04T13:39:54.453481', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'test_sb3.py', 'codePathLocal': 'test_sb3.py', 'codePath': 'test_sb3.py', 'git': {'remote': 'https://github.com/lottiful/Project.git', 'commit': '694c75f876a68fc7c065be31f95fc0d14e876eab'}, 'email': None, 'root': '/home/carlotta/Project', 'host': 'LAPTOP-AGIRG7E8', 'username': 'carlotta', 'executable': '/home/carlotta/miniconda3/envs/mldl/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1991.999, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 10.3397216796875}}, 'gpu': 'NVIDIA GeForce MX130', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce MX130', 'memory_total': 2147483648}], 'memory': {'total': 3.769603729248047}}
+2024-06-04 15:39:56,744 INFO    HandlerThread:24784 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-04 15:39:56,745 INFO    HandlerThread:24784 [system_monitor.py:probe():227] Publishing system info
+2024-06-04 15:39:56,745 DEBUG   HandlerThread:24784 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-06-04 15:39:57,387 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/conda-environment.yaml
+2024-06-04 15:39:58,825 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:39:58,827 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:01,022 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:01,023 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:03,220 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:03,221 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:03,222 DEBUG   HandlerThread:24784 [system_info.py:_save_conda():222] Saving conda packages done
+2024-06-04 15:40:03,224 INFO    HandlerThread:24784 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-04 15:40:03,238 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:03,239 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-04 15:40:03,241 DEBUG   SenderThread:24784 [sender.py:send():378] send: files
+2024-06-04 15:40:03,241 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-06-04 15:40:03,383 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/conda-environment.yaml
+2024-06-04 15:40:03,383 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-metadata.json
+2024-06-04 15:40:03,386 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-04 15:40:03,387 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: python_packages
+2024-06-04 15:40:03,391 DEBUG   SenderThread:24784 [sender.py:send():378] send: telemetry
+2024-06-04 15:40:03,391 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:40:03,392 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:40:03,969 INFO    wandb-upload_0:24784 [upload_job.py:push():130] Uploaded file /tmp/tmpt23_nqx5wandb/5dc9zyvb-wandb-metadata.json
+2024-06-04 15:40:04,385 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/requirements.txt
+2024-06-04 15:40:05,323 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:05,325 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:05,630 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:07,334 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:07,335 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:09,341 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:09,342 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:10,632 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:11,358 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:11,370 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:13,380 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:13,381 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:15,396 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:15,402 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:15,635 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:17,416 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:17,417 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:18,399 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:40:18,403 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:40:19,423 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:19,424 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:20,707 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:21,429 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:21,430 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:23,442 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:23,444 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:25,457 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:25,458 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:25,715 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:26,438 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/config.yaml
+2024-06-04 15:40:27,437 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:40:27,532 ERROR   gpu       :24784 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-04 15:40:27,539 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:27,540 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:29,439 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:40:29,553 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:29,555 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:31,267 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:31,565 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:31,567 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:33,577 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:33,578 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:34,384 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:40:34,385 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:40:35,590 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:35,592 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:36,614 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:37,604 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:37,607 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:39,613 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:39,614 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:39,872 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:40:39,885 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:40:39,887 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:40:39,893 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:40:40,450 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:40:41,452 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:40:41,623 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:41,625 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:42,130 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:43,636 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:43,638 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:45,653 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:45,654 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:47,132 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:47,666 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:47,668 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:49,448 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:40:49,455 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:40:49,680 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:49,681 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:51,697 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:51,700 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:52,828 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:53,711 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:53,713 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:55,728 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:55,730 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:56,562 DEBUG   SystemMonitor:24784 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-04 15:40:56,589 DEBUG   SenderThread:24784 [sender.py:send():378] send: stats
+2024-06-04 15:40:57,795 ERROR   gpu       :24784 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-04 15:40:57,806 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:57,808 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:58,593 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:40:58,986 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:40:58,993 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:40:58,994 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:40:58,996 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:40:59,481 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:40:59,482 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:40:59,822 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:40:59,824 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:01,834 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:01,836 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:03,844 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:03,845 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:04,224 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:05,800 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:41:05,804 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:41:05,857 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:05,859 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:06,903 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:06,904 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:06,905 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:06,910 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:07,489 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:07,490 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:07,871 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:07,874 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:09,889 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:09,891 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:10,103 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:11,908 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:11,911 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:13,919 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:13,920 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:14,185 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:14,188 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:14,189 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:14,191 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:14,498 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:15,406 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:15,499 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:15,931 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:15,936 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:17,948 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:17,950 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:19,962 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:19,964 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:20,408 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:20,804 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:41:20,806 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:41:21,976 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:21,978 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:23,821 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:23,822 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:23,823 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:23,825 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:23,986 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:23,987 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:24,507 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:25,508 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:25,882 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:25,993 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:25,994 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:26,594 DEBUG   SenderThread:24784 [sender.py:send():378] send: stats
+2024-06-04 15:41:28,056 ERROR   gpu       :24784 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-04 15:41:28,068 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:28,069 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:30,079 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:30,081 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:31,598 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:32,089 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:32,090 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:32,527 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:32,529 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:32,529 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:32,530 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:33,514 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:33,515 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:34,095 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:34,096 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:36,101 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:36,102 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:36,607 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:37,308 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:41:37,311 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:41:38,112 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:38,114 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:40,119 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:40,120 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:40,207 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:40,209 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:40,209 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:40,213 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:40,521 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:41,521 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:42,125 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:42,126 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:42,316 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:44,138 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:44,140 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:45,279 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:45,282 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:45,283 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:45,285 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:45,525 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:45,525 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:46,151 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:46,153 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:47,337 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:48,164 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:48,166 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:50,171 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:50,171 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:52,183 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:52,185 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:52,314 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-04 15:41:52,318 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: stop_status
+2024-06-04 15:41:52,597 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: status_report
+2024-06-04 15:41:53,397 DEBUG   HandlerThread:24784 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-04 15:41:53,398 DEBUG   SenderThread:24784 [sender.py:send():378] send: history
+2024-06-04 15:41:53,399 DEBUG   SenderThread:24784 [sender.py:send_request():405] send_request: summary_record
+2024-06-04 15:41:53,404 INFO    SenderThread:24784 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-04 15:41:53,536 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/wandb-summary.json
+2024-06-04 15:41:54,190 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:54,191 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:55,542 INFO    Thread-12 :24784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/files/output.log
+2024-06-04 15:41:55,700 WARNING StreamThr :24784 [internal.py:is_dead():414] Internal process exiting, parent pid 24681 disappeared
+2024-06-04 15:41:55,703 ERROR   StreamThr :24784 [internal.py:wandb_internal():151] Internal process shutdown.
+2024-06-04 15:41:56,204 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:56,206 ERROR   gpu       :24784 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-04 15:41:56,453 INFO    HandlerThread:24784 [handler.py:finish():882] shutting down handler
+2024-06-04 15:41:56,455 INFO    WriterThread:24784 [datastore.py:close():296] close: /home/carlotta/Project/wandb/run-20240604_153954-3f2yusjs/run-3f2yusjs.wandb
+2024-06-04 15:41:56,457 INFO    SenderThread:24784 [sender.py:finish():1545] shutting down sender
+2024-06-04 15:41:56,458 INFO    HandlerThread:24784 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-04 15:41:56,461 DEBUG   SystemMonitor:24784 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-04 15:41:56,467 DEBUG   SystemMonitor:24784 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-04 15:41:56,474 INFO    HandlerThread:24784 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-04 15:41:56,477 INFO    HandlerThread:24784 [interfaces.py:finish():200] Joined disk monitor
+2024-06-04 15:41:56,484 ERROR   gpu       :24784 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-04 15:41:56,485 INFO    HandlerThread:24784 [interfaces.py:finish():200] Joined gpu monitor
+2024-06-04 15:41:56,487 INFO    HandlerThread:24784 [interfaces.py:finish():200] Joined memory monitor
+2024-06-04 15:41:56,487 INFO    HandlerThread:24784 [interfaces.py:finish():200] Joined network monitor
+2024-06-04 15:41:56,856 INFO    MainThread:24784 [internal.py:handle_exit():75] Internal process exited

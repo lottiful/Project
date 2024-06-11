@@ -34,8 +34,8 @@ def main():
     #
 
     #noi avevamo learning rate = 0.0025
-    learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4, 2.5e-4, 1e-5]
-    #learning_rate_values = [0.00025]
+    #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4, 2.5e-4, 1e-5]
+    learning_rate_values = [0.0005]
 
     models_performances = []
 
@@ -68,7 +68,7 @@ def main():
         performance_threshold=50
         dynamic_rand = True
 
-        n_episodes = 600000 #500000
+        n_episodes = 2000000 #500000
 
         train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold)
 
@@ -90,12 +90,12 @@ def main():
     
     print(models_performances)
 
-    """
+
     wandb.init(project="calGTT", name="PPO_train")
     for i in range(len(train_env.performance_history)):
         wandb.log({"Reward": train_env.performance_history[i]})
     wandb.finish()
-    """
+
 
     model.save("ppo_model_")
 

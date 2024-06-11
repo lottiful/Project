@@ -1,0 +1,88 @@
+{
+    "os": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-debian-bookworm-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2024-06-04T13:39:56.592955",
+    "startedAt": "2024-06-04T13:39:54.453481",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "test_sb3.py",
+    "codePathLocal": "test_sb3.py",
+    "codePath": "test_sb3.py",
+    "git": {
+        "remote": "https://github.com/lottiful/Project.git",
+        "commit": "694c75f876a68fc7c065be31f95fc0d14e876eab"
+    },
+    "email": null,
+    "root": "/home/carlotta/Project",
+    "host": "LAPTOP-AGIRG7E8",
+    "username": "carlotta",
+    "executable": "/home/carlotta/miniconda3/envs/mldl/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1991.999,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1991.999,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 10.3397216796875
+        }
+    },
+    "gpu": "NVIDIA GeForce MX130",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX130",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 3.769603729248047
+    }
+}
