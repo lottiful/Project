@@ -34,8 +34,8 @@ def main():
     #
 
     #noi avevamo learning rate = 0.0025
-    #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4]
-    learning_rate_values = [0.00025]
+    learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4, 2.5e-4, 1e-5]
+    #learning_rate_values = [0.00025]
 
     models_performances = []
 

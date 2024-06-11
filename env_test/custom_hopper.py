@@ -43,9 +43,9 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
     def modify_inclination(self, inclination_angle):
         self.inclination_angle = inclination_angle
 
-        if self.inclination_angle != 0:
-            self.modify_xml_for_inclination()
-            self.build_model()
+        #if self.inclination_angle != 0:
+        self.modify_xml_for_inclination()
+        self.build_model()
 
     def set_random_parameters(self):
         """Set random masses"""

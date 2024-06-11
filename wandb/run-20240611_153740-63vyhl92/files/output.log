@@ -1,0 +1,12 @@
+tensor([-4.7860, -5.2487, -3.5488, -4.8568, -3.3939, -2.7451, -2.7809, -5.6670,
+        -3.0138], grad_fn=<SqueezeBackward1>)
+tensor([-6.3296, -7.0973, -7.2762, -6.9961, -6.5830, -5.8618, -4.9088, -3.7396,
+        -2.0854])
+Traceback (most recent call last):
+  File "train.py", line 100, in <module>
+    main()
+  File "train.py", line 76, in main
+    agent.update_policy(critic)
+  File "/home/lisag/Project/agent.py", line 156, in update_policy
+    loss += -log_prob * (actor_G - b) #probabilità tra 0 e 1, logaritmo neg, metto meno
+UnboundLocalError: local variable 'loss' referenced before assignment

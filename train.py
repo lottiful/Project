@@ -15,8 +15,8 @@ import wandb
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--n-episodes', default=10000, type=int, help='Number of training episodes')
-    parser.add_argument('--print-every', default=20000, type=int, help='Print info every <> episodes')
+    parser.add_argument('--n-episodes', default=2000, type=int, help='Number of training episodes')
+    parser.add_argument('--print-every', default=400, type=int, help='Print info every <> episodes')
     parser.add_argument('--device', default='cpu', type=str, help='network device [cpu, cuda]')
 
     return parser.parse_args()
@@ -49,17 +49,18 @@ def main():
     #
 
 	#Reinforce -> critic = False; Actor-critic -> critic = True
-	critic = True
+	critic = False
 	i = 0
 
 	#sistemare il nome ogni volta
-	wandb.init(project="calGTT", name="AC_train")
+	wandb.init(project="calGTT", name="REINFORCEb0_train")
+
+	start_time = timer()
 
 	for episode in range(args.n_episodes):
 		done = False
 		train_reward = 0
 		state = env.reset()  # Reset the environment and observe the initial state
-		start_time = timer()
 
 		while not done:  # Loop until the episode is over
 			action, action_probabilities = agent.get_action(state)
@@ -84,13 +85,13 @@ def main():
 	
 	wandb.finish()
 		
-		if (episode+1)%args.print_every == 0:
-			print('Training episode:', episode)
-			print('Episode return:', train_reward)
+	if (episode+1)%args.print_every == 0:
+		print('Training episode:', episode)
+		print('Episode return:', train_reward)
 
-		end_time = timer()
-		total_time = end_time-start_time
-		print ('total time = ',total_time)
+	end_time = timer()
+	total_time = end_time-start_time
+	print ('total time = ',total_time)
 
 	torch.save(agent.policy.state_dict(), "model.mdl")
 

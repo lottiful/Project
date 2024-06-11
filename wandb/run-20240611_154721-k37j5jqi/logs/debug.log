@@ -1,0 +1,34 @@
+2024-06-11 15:47:21,331 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Current SDK version is 0.17.1
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Configure stats pid to 36030
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Loading settings from /home/lisag/.config/wandb/settings
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Loading settings from /home/lisag/Project/wandb/settings
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/home/lisag/Project/train.py', 'program': 'train.py'}
+2024-06-11 15:47:21,332 INFO    MainThread:36030 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:_log_setup():520] Logging user logs to /home/lisag/Project/wandb/run-20240611_154721-k37j5jqi/logs/debug.log
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:_log_setup():521] Logging internal logs to /home/lisag/Project/wandb/run-20240611_154721-k37j5jqi/logs/debug-internal.log
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:init():560] calling init triggers
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {}
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:init():610] starting backend
+2024-06-11 15:47:21,333 INFO    MainThread:36030 [wandb_init.py:init():614] setting up manager
+2024-06-11 15:47:21,339 INFO    MainThread:36030 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-06-11 15:47:21,343 INFO    MainThread:36030 [wandb_init.py:init():622] backend started and connected
+2024-06-11 15:47:21,355 INFO    MainThread:36030 [wandb_init.py:init():711] updated telemetry
+2024-06-11 15:47:21,389 INFO    MainThread:36030 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-06-11 15:47:22,162 INFO    MainThread:36030 [wandb_run.py:_on_init():2402] communicating current version
+2024-06-11 15:47:22,364 INFO    MainThread:36030 [wandb_run.py:_on_init():2411] got version response 
+2024-06-11 15:47:22,365 INFO    MainThread:36030 [wandb_init.py:init():795] starting run threads in backend
+2024-06-11 15:47:25,777 INFO    MainThread:36030 [wandb_run.py:_console_start():2380] atexit reg
+2024-06-11 15:47:25,777 INFO    MainThread:36030 [wandb_run.py:_redirect():2235] redirect: wrap_raw
+2024-06-11 15:47:25,777 INFO    MainThread:36030 [wandb_run.py:_redirect():2300] Wrapping output streams.
+2024-06-11 15:47:25,777 INFO    MainThread:36030 [wandb_run.py:_redirect():2325] Redirects installed.
+2024-06-11 15:47:25,781 INFO    MainThread:36030 [wandb_init.py:init():838] run started, returning control to user process
+2024-06-11 16:01:36,586 INFO    MainThread:36030 [wandb_run.py:_finish():2109] finishing run mldl24/calGTT/k37j5jqi
+2024-06-11 16:01:36,586 INFO    MainThread:36030 [wandb_run.py:_atexit_cleanup():2349] got exitcode: 0
+2024-06-11 16:01:36,586 INFO    MainThread:36030 [wandb_run.py:_restore():2332] restore
+2024-06-11 16:01:36,586 INFO    MainThread:36030 [wandb_run.py:_restore():2338] restore done
+2024-06-11 16:01:41,157 INFO    MainThread:36030 [wandb_run.py:_footer_history_summary_info():4008] rendering history
+2024-06-11 16:01:41,157 INFO    MainThread:36030 [wandb_run.py:_footer_history_summary_info():4040] rendering summary
+2024-06-11 16:01:41,161 INFO    MainThread:36030 [wandb_run.py:_footer_sync_info():3967] logging synced files

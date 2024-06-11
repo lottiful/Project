@@ -45,8 +45,7 @@ def main():
 
 	#parametro di inclinazione dell'angolo
 	inclination_angle = -20
-	if inclination_angle != 0:
-		env.modify_inclination(inclination_angle)
+	env.modify_inclination(inclination_angle)
 
 	list_rewards = []
 
