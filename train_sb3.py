@@ -45,7 +45,6 @@ def main():
     parser.add_argument('--train', type=str, default='source', help='Specify training environment: source or target')
     args = parser.parse_args()
 
-    rand_masses = True
 
     for learning_rate in learning_rate_values:
         if args.train == 'source':
@@ -59,14 +58,14 @@ def main():
 
         #PARAMETRI 
         #decidere quale tipo di domain randomization implementare
-        rand_masses = True
-        rand_angle = True
+        rand_masses = False
+        rand_angle = False
         randomization_range = 0.5
         #decidere se utilizzare un angolo specifico di partenza
         inclination_angle = 0
         #decidere se fare la DDR
         performance_threshold=50
-        dynamic_rand = True
+        dynamic_rand = False
 
         n_episodes = 2000000 #500000
 
