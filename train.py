@@ -10,6 +10,7 @@ from env_test.custom_hopper import *
 from agent import Agent, Policy, Policy_critic
 
 from timeit import default_timer as timer
+import wandb
 
 
 def parse_args():
@@ -51,6 +52,9 @@ def main():
 	critic = True
 	i = 0
 
+	#sistemare il nome ogni volta
+	wandb.init(project="calGTT", name="AC_train")
+
 	for episode in range(args.n_episodes):
 		done = False
 		train_reward = 0
@@ -71,11 +75,14 @@ def main():
 				if done == True:
 					agent.update_policy(critic)
 			else:
-				if (i%20 == 0) and (i!=0): #update the policy every 50 steps, a prescindere dall'episodio (i cumulativa esterna)
+				if (i%50 == 0) and (i!=0): #update the policy every 50 steps, a prescindere dall'episodio (i cumulativa esterna)
 					agent.update_policy(critic)
-					#DA VERIFICARE SE FUNZIONA STA COSA DELL'AGGIORNAMENTO.
-
 			i +=1
+
+		wandb.log({"Reward": train_reward})
+		
+	
+	wandb.finish()
 		
 		if (episode+1)%args.print_every == 0:
 			print('Training episode:', episode)

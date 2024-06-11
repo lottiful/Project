@@ -36,11 +36,11 @@ def main():
 	action_space_dim = env.action_space.shape[-1]
 
 	#MODIFICARE IL NOMEeeeeeeeeeeeeeeeeeee
-	wandb.init(project="calGTT", name="sb3")
+	wandb.init(project="calGTT", name="PPO_test")
 
 	#choose the model to test
-	model = PPO.load("ppo_model_")
-	#model = PPO.load("ppo_model_UDR_")
+	#model = PPO.load("ppo_model_")
+	model = PPO.load("ppo_model_UDR_")
 	#model = PPO.load("ppo_model_DDR_")
 
 	#parametro di inclinazione dell'angolo
@@ -73,13 +73,19 @@ def main():
 		print(f"Episode: {episode} | Return: {test_reward}")
 	
 	mean_reward = np.mean(list_rewards)
-	wandb.log({"Reward": mean_reward})
 	std_reward = np.std(list_rewards)
 
 	print(f"mean reward = {mean_reward}")
 	print(f"std reward = {std_reward}")
 
 	wandb.finish()
+
+	wandb.init(project="calGTT", name="mean")
+	for i in range(50):
+		wandb.log({"Reward": mean_reward})
+	wandb.finish()
+
+
 
 
 	

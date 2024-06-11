@@ -91,9 +91,9 @@ def main():
     print(models_performances)
 
     """
-    wandb.init(project="calGTT", name="ADR")
-    for i in range(len(source_env.performance_history)):
-        wandb.log({"Reward": source_env.performance_history[i]})
+    wandb.init(project="calGTT", name="PPO_train")
+    for i in range(len(train_env.performance_history)):
+        wandb.log({"Reward": train_env.performance_history[i]})
     wandb.finish()
     """
 
