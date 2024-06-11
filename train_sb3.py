@@ -36,12 +36,9 @@ def main():
     #noi avevamo learning rate = 0.0025
     #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4]
     learning_rate_values = [0.00025]
-    #ent_coef ?
 
     models_performances = []
 
-    #Per ora per decidere se fare la randomization delle masse oppure degli angoli 
-    #bisogna andare su mujoco env e modificare i due parametri self.rand_masses e self.rand_angle
     #da capire se poi vogliamo passarglieli quando facciamo il train da linea di comando o che altro fare
 
     parser = argparse.ArgumentParser()
@@ -62,16 +59,18 @@ def main():
 
         #PARAMETRI 
         #decidere quale tipo di domain randomization implementare
-        rand_masses = False
-        rand_angle = False
+        rand_masses = True
+        rand_angle = True
         randomization_range = 0.5
-        adaptive_rand = False
         #decidere se utilizzare un angolo specifico di partenza
-        inclination_angle = -10
+        inclination_angle = 0
+        #decidere se fare la DDR
+        performance_threshold=50
+        dynamic_rand = True
 
-        n_episodes = 500000
+        n_episodes = 600000 #500000
 
-        train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range, adaptive_rand)
+        train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold)
 
         model = PPO('MlpPolicy', n_steps=1024, batch_size=128, learning_rate=learning_rate, env=train_env, verbose=1, device='cpu') #learning_rate=0.00025
         model.learn(total_timesteps=int(n_episodes))
@@ -91,6 +90,16 @@ def main():
     
     print(models_performances)
 
+    """
+    wandb.init(project="calGTT", name="ADR")
+    for i in range(len(source_env.performance_history)):
+        wandb.log({"Reward": source_env.performance_history[i]})
+    wandb.finish()
+    """
+
+    model.save("ppo_model_")
+
+    """
     #If the model is trained with the domain randomization, it is saved into a different file.
     if train_env.rand_masses is False:
         print("entra nel false")
@@ -98,6 +107,7 @@ def main():
     else:
         print("Entra nel true")
         model.save("ppo_model_UDR_")
+    """
 
 if __name__ == '__main__':
     main()

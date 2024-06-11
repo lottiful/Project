@@ -35,15 +35,16 @@ def main():
 	observation_space_dim = env.observation_space.shape[-1]
 	action_space_dim = env.action_space.shape[-1]
 
+	#MODIFICARE IL NOMEeeeeeeeeeeeeeeeeeee
 	wandb.init(project="calGTT", name="sb3")
 
 	#choose the model to test
 	model = PPO.load("ppo_model_")
 	#model = PPO.load("ppo_model_UDR_")
-	#model = PPO.load("ppo_model_ADR_")
+	#model = PPO.load("ppo_model_DDR_")
 
 	#parametro di inclinazione dell'angolo
-	inclination_angle = -10
+	inclination_angle = -20
 	if inclination_angle != 0:
 		env.modify_inclination(inclination_angle)
 

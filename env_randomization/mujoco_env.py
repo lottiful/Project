@@ -54,9 +54,11 @@ class MujocoEnv(gym.Env):
         #flag for domain randomization
         self.rand_masses = False
         self.rand_angle = False
-        self.adaptive_rand = False
+        self.dynamic_rand = False
 
         self.inclination_angle = 0
+
+        self.episode_reward = 0
 
         self._set_action_space()
 
