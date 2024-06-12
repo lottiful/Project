@@ -29,6 +29,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
         if domain == 'source':  # Source environment has an imprecise torso mass (1kg shift)
             self.sim.model.body_mass[1] -= 1.0
+        
+        #self.modify_xml_for_inclination()
 
 
     def modify_xml_for_inclination(self):
@@ -56,8 +58,10 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
         """Set random inclination angle"""
         if self.rand_angle is True:
-            #self.inclination_angle = np.random.uniform(-20, 0)
-            self.inclination_angle = np.random.uniform(-10 - self.randomization_scale_ang, -10 + self.randomization_scale_ang)
+            if self.dynamic_rand is False:
+                self.inclination_angle = np.random.uniform(-20, 0)
+            else:
+                self.inclination_angle = np.random.uniform(-10 - self.randomization_scale_ang, -10 + self.randomization_scale_ang)
             self.modify_xml_for_inclination()
 
 
@@ -100,7 +104,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         alive_bonus = 1.0
 
         #reward is given by the horizontal speed is the plane is flat, by the diagonal speed if the plane is inclined.
-        if self.inclination_angle ==0:
+        if self.inclination_angle == 0:
             reward = (posafter - posbefore) / self.dt
         else:
             reward = np.sqrt(np.square(posafter - posbefore) + np.square(height_before - height)) / self.dt

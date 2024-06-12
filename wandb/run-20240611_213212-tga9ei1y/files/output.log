@@ -1,0 +1,26 @@
+
+entra nella modifica xml
+Traceback (most recent call last):
+  File "test_sb3.py", line 93, in <module>
+    main()
+  File "test_sb3.py", line 59, in main
+    action, _ = model.predict(state, deterministic=True) #si potrebbe mettere: determinist = True (non e qua)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/stable_baselines3/common/base_class.py", line 535, in predict
+    return self.policy.predict(observation, state, episode_start, deterministic)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/stable_baselines3/common/policies.py", line 343, in predict
+    actions = self._predict(observation, deterministic=deterministic)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/stable_baselines3/common/policies.py", line 687, in _predict
+    return self.get_distribution(observation).get_actions(deterministic=deterministic)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/stable_baselines3/common/policies.py", line 721, in get_distribution
+    latent_pi = self.mlp_extractor.forward_actor(features)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/stable_baselines3/common/torch_layers.py", line 266, in forward_actor
+    return self.policy_net(self.shared_net(features))
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/carlotta/miniconda3/envs/mldl/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

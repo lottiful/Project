@@ -15,6 +15,7 @@ from stable_baselines3.common.evaluation import evaluate_policy
 import os
 import numpy as np
 import argparse
+import wandb
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -35,7 +36,7 @@ def main():
 
     #noi avevamo learning rate = 0.0025
     #learning_rate_values = [1e-2, 5e-3, 1e-3, 5e-4, 2.5e-4, 1e-5]
-    learning_rate_values = [0.0005]
+    learning_rate_values = [0.00025]
 
     models_performances = []
 
@@ -63,11 +64,13 @@ def main():
         randomization_range = 0.5
         #decidere se utilizzare un angolo specifico di partenza
         inclination_angle = 0
+        #ho aggiunto questo da verificare non c'è funzione 
+        #train_env.modify_inclination(inclination_angle)
         #decidere se fare la DDR
         performance_threshold=50
         dynamic_rand = False
 
-        n_episodes = 2000000 #500000
+        n_episodes = 200000 #500000
 
         train_env.modify_rand_paramether(rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold)
 
@@ -75,7 +78,8 @@ def main():
         model.learn(total_timesteps=int(n_episodes))
 
         #If the model is trained with the randomization of the angle, reset the xml file with starting angle uqual to 0.
-        if train_env.rand_angle is True:
+    
+        if train_env.rand_angle != 0:
             train_env.inclination_angle = 0
             train_env.modify_xml_for_inclination()
 
@@ -89,14 +93,15 @@ def main():
     
     print(models_performances)
 
+    model.save("ppo_model_")
 
-    wandb.init(project="calGTT", name="PPO_train")
+    wandb.init(project="calGTT", name="prova")
     for i in range(len(train_env.performance_history)):
         wandb.log({"Reward": train_env.performance_history[i]})
     wandb.finish()
 
 
-    model.save("ppo_model_")
+   
 
     """
     #If the model is trained with the domain randomization, it is saved into a different file.

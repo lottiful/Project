@@ -1,0 +1,327 @@
+2024-06-12 15:43:00,372 INFO    StreamThr :304885 [internal.py:wandb_internal():88] W&B internal server running at pid: 304885, started at: 2024-06-12 15:43:00.368702
+2024-06-12 15:43:00,386 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status
+2024-06-12 15:43:00,406 INFO    WriterThread:304885 [datastore.py:open_for_write():87] open: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/run-wz3vg6dh.wandb
+2024-06-12 15:43:00,412 DEBUG   SenderThread:304885 [sender.py:send():378] send: header
+2024-06-12 15:43:00,465 DEBUG   SenderThread:304885 [sender.py:send():378] send: run
+2024-06-12 15:43:01,398 INFO    SenderThread:304885 [dir_watcher.py:__init__():211] watching files in: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files
+2024-06-12 15:43:01,399 INFO    SenderThread:304885 [sender.py:_start_run_threads():1126] run started: wz3vg6dh with start time 1718199780.370282
+2024-06-12 15:43:01,414 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: check_version
+2024-06-12 15:43:01,416 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: check_version
+2024-06-12 15:43:02,016 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: run_start
+2024-06-12 15:43:02,983 DEBUG   HandlerThread:304885 [system_info.py:__init__():26] System info init
+2024-06-12 15:43:02,984 DEBUG   HandlerThread:304885 [system_info.py:__init__():41] System info init done
+2024-06-12 15:43:02,984 INFO    HandlerThread:304885 [system_monitor.py:start():194] Starting system monitor
+2024-06-12 15:43:02,987 INFO    SystemMonitor:304885 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-12 15:43:02,995 INFO    HandlerThread:304885 [system_monitor.py:probe():214] Collecting system info
+2024-06-12 15:43:02,998 INFO    SystemMonitor:304885 [interfaces.py:start():188] Started cpu monitoring
+2024-06-12 15:43:03,002 INFO    SystemMonitor:304885 [interfaces.py:start():188] Started disk monitoring
+2024-06-12 15:43:03,011 INFO    SystemMonitor:304885 [interfaces.py:start():188] Started gpu monitoring
+2024-06-12 15:43:03,021 INFO    SystemMonitor:304885 [interfaces.py:start():188] Started memory monitoring
+2024-06-12 15:43:03,025 INFO    SystemMonitor:304885 [interfaces.py:start():188] Started network monitoring
+2024-06-12 15:43:03,110 DEBUG   HandlerThread:304885 [system_info.py:probe():150] Probing system
+2024-06-12 15:43:03,213 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:03,216 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:03,466 DEBUG   HandlerThread:304885 [system_info.py:_probe_git():135] Probing git
+2024-06-12 15:43:03,519 DEBUG   HandlerThread:304885 [system_info.py:_probe_git():143] Probing git done
+2024-06-12 15:43:03,520 DEBUG   HandlerThread:304885 [system_info.py:probe():198] Probing system done
+2024-06-12 15:43:03,521 DEBUG   HandlerThread:304885 [system_monitor.py:probe():223] {'os': 'Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-debian-bookworm-sid', 'python': '3.7.12', 'heartbeatAt': '2024-06-12T13:43:03.111923', 'startedAt': '2024-06-12T13:43:00.288058', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'test_sb3.py', 'codePathLocal': 'test_sb3.py', 'codePath': 'test_sb3.py', 'git': {'remote': 'https://github.com/lottiful/Project.git', 'commit': '2679e8081fb20562f3d3fd01df5f4c560135b3bb'}, 'email': 'carlotta.trovati@gmail.com', 'root': '/home/carlotta/Project', 'host': 'LAPTOP-AGIRG7E8', 'username': 'carlotta', 'executable': '/home/carlotta/miniconda3/envs/mldl/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1991.999, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}, {'current': 1991.999, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 1006.853931427002, 'used': 10.473701477050781}}, 'gpu': 'NVIDIA GeForce MX130', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce MX130', 'memory_total': 2147483648}], 'memory': {'total': 3.769603729248047}}
+2024-06-12 15:43:03,522 INFO    HandlerThread:304885 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-12 15:43:03,522 INFO    HandlerThread:304885 [system_monitor.py:probe():227] Publishing system info
+2024-06-12 15:43:03,522 DEBUG   HandlerThread:304885 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-06-12 15:43:04,408 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/conda-environment.yaml
+2024-06-12 15:43:05,225 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:05,226 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:07,233 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:07,234 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:09,238 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:09,239 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:11,113 DEBUG   HandlerThread:304885 [system_info.py:_save_conda():222] Saving conda packages done
+2024-06-12 15:43:11,116 INFO    HandlerThread:304885 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-12 15:43:11,133 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:11,134 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: keepalive
+2024-06-12 15:43:11,134 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:11,136 DEBUG   SenderThread:304885 [sender.py:send():378] send: files
+2024-06-12 15:43:11,136 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-06-12 15:43:11,248 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:11,249 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:11,293 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-12 15:43:11,294 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: python_packages
+2024-06-12 15:43:11,295 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 15:43:11,295 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: stop_status
+2024-06-12 15:43:11,406 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/conda-environment.yaml
+2024-06-12 15:43:11,406 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-metadata.json
+2024-06-12 15:43:11,407 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/requirements.txt
+2024-06-12 15:43:11,704 DEBUG   SenderThread:304885 [sender.py:send():378] send: telemetry
+2024-06-12 15:43:12,181 INFO    wandb-upload_0:304885 [upload_job.py:push():130] Uploaded file /tmp/tmpns40kj16wandb/dui7fi99-wandb-metadata.json
+2024-06-12 15:43:13,258 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:13,260 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:15,266 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:15,267 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:16,707 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:17,273 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:17,273 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:19,278 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:19,279 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:21,284 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:21,285 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:21,717 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:23,295 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:23,302 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:23,416 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:25,313 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:25,315 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:25,417 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:26,314 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 15:43:26,316 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: stop_status
+2024-06-12 15:43:27,326 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:27,327 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:27,569 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:29,337 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:29,339 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:29,422 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:31,352 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:31,354 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:33,424 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:33,519 ERROR   gpu       :304885 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-12 15:43:33,531 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:33,533 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:34,490 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/config.yaml
+2024-06-12 15:43:35,541 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:35,542 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:37,555 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:37,557 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:38,779 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:39,563 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:39,564 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:41,298 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 15:43:41,305 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: stop_status
+2024-06-12 15:43:41,563 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:41,592 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:41,593 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:41,776 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:41,776 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:41,784 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:42,497 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_created():271] file/dir created: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:42,636 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:42,639 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:42,639 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:42,641 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:43,498 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:43,499 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:43,599 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:43,600 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:44,166 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:44,169 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:44,170 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:44,170 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:44,179 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:44,499 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:44,594 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:44,599 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:44,599 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:44,601 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:45,499 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:45,499 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:45,607 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:45,608 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:46,037 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:46,042 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:46,042 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:46,043 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:46,500 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:47,502 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:47,619 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:47,621 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:49,632 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:49,634 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:49,799 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:43:49,804 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:43:49,805 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:43:49,806 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:49,815 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:43:50,505 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:43:51,507 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:43:51,647 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:51,650 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:53,664 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:53,666 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:54,826 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:43:55,680 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:55,682 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:56,549 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 15:43:56,553 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: stop_status
+2024-06-12 15:43:57,694 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:57,696 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:59,707 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:43:59,709 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:00,047 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:44:01,724 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:01,726 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:03,033 DEBUG   SystemMonitor:304885 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-12 15:44:03,073 DEBUG   SenderThread:304885 [sender.py:send():378] send: stats
+2024-06-12 15:44:03,790 ERROR   gpu       :304885 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-12 15:44:03,802 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:03,804 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:05,078 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:44:05,816 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:05,818 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:06,747 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-12 15:44:06,753 DEBUG   SenderThread:304885 [sender.py:send():378] send: history
+2024-06-12 15:44:06,756 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: summary_record
+2024-06-12 15:44:06,759 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:44:07,524 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:44:07,525 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:44:07,831 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:07,833 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:09,843 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:09,844 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:10,766 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:44:11,687 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 15:44:11,690 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: stop_status
+2024-06-12 15:44:11,855 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:11,857 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:13,868 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:13,870 ERROR   gpu       :304885 [interfaces.py:monitor():142] Failed to sample metric: Not Supported
+2024-06-12 15:44:14,480 DEBUG   SenderThread:304885 [sender.py:send():378] send: exit
+2024-06-12 15:44:14,481 INFO    SenderThread:304885 [sender.py:send_exit():585] handling exit code: 0
+2024-06-12 15:44:14,501 INFO    SenderThread:304885 [sender.py:send_exit():587] handling runtime: 72
+2024-06-12 15:44:14,508 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:44:14,509 INFO    SenderThread:304885 [sender.py:send_exit():593] send defer
+2024-06-12 15:44:14,510 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,511 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 0
+2024-06-12 15:44:14,512 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,513 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-06-12 15:44:14,513 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 1
+2024-06-12 15:44:14,514 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,514 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 1
+2024-06-12 15:44:14,515 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,515 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-06-12 15:44:14,515 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 2
+2024-06-12 15:44:14,516 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,516 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 2
+2024-06-12 15:44:14,516 INFO    HandlerThread:304885 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-12 15:44:14,518 DEBUG   SystemMonitor:304885 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-12 15:44:14,518 DEBUG   SystemMonitor:304885 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-12 15:44:14,522 INFO    HandlerThread:304885 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-12 15:44:14,524 INFO    HandlerThread:304885 [interfaces.py:finish():200] Joined disk monitor
+2024-06-12 15:44:14,534 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:44:14,575 ERROR   gpu       :304885 [interfaces.py:aggregate():159] Failed to serialize metric: division by zero
+2024-06-12 15:44:14,576 INFO    HandlerThread:304885 [interfaces.py:finish():200] Joined gpu monitor
+2024-06-12 15:44:14,576 INFO    HandlerThread:304885 [interfaces.py:finish():200] Joined memory monitor
+2024-06-12 15:44:14,576 INFO    HandlerThread:304885 [interfaces.py:finish():200] Joined network monitor
+2024-06-12 15:44:14,578 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,578 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-06-12 15:44:14,578 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 3
+2024-06-12 15:44:14,578 DEBUG   SenderThread:304885 [sender.py:send():378] send: stats
+2024-06-12 15:44:14,579 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,580 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 3
+2024-06-12 15:44:14,580 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,581 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-06-12 15:44:14,581 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 4
+2024-06-12 15:44:14,582 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,582 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 4
+2024-06-12 15:44:14,585 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,585 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-06-12 15:44:14,585 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 5
+2024-06-12 15:44:14,586 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,586 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 5
+2024-06-12 15:44:14,587 DEBUG   SenderThread:304885 [sender.py:send():378] send: summary
+2024-06-12 15:44:14,588 INFO    SenderThread:304885 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-12 15:44:14,589 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,589 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-06-12 15:44:14,589 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 6
+2024-06-12 15:44:14,589 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,590 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 6
+2024-06-12 15:44:14,590 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,591 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-06-12 15:44:14,591 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 7
+2024-06-12 15:44:14,592 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 15:44:14,592 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,593 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 7
+2024-06-12 15:44:14,593 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,593 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-06-12 15:44:14,919 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 8
+2024-06-12 15:44:14,925 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:14,925 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 8
+2024-06-12 15:44:14,927 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:14,927 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-06-12 15:44:14,934 INFO    SenderThread:304885 [job_builder.py:build():432] Attempting to build job artifact
+2024-06-12 15:44:14,951 INFO    SenderThread:304885 [job_builder.py:_get_source_type():565] is repo sourced job
+2024-06-12 15:44:15,375 INFO    SenderThread:304885 [job_builder.py:build():541] adding wandb-job metadata file
+2024-06-12 15:44:15,435 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 9
+2024-06-12 15:44:15,436 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:15,436 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 9
+2024-06-12 15:44:15,439 DEBUG   SenderThread:304885 [sender.py:send():378] send: artifact
+2024-06-12 15:44:15,486 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 15:44:15,535 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:44:15,535 INFO    Thread-12 :304885 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:44:16,797 INFO    SenderThread:304885 [sender.py:send_artifact():1467] sent artifact job-https___github.com_lottiful_Project.git_test_sb3.py - {'id': 'QXJ0aWZhY3Q6ODY3OTQ3NjM5', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE4NDc4MDMwNg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODY3OTQ3NjM5', 'versionIndex': 1}}}
+2024-06-12 15:44:16,798 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:16,798 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-06-12 15:44:16,798 INFO    SenderThread:304885 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-12 15:44:17,539 INFO    SenderThread:304885 [dir_watcher.py:finish():388] scan: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files
+2024-06-12 15:44:17,540 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json wandb-summary.json
+2024-06-12 15:44:17,542 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/requirements.txt requirements.txt
+2024-06-12 15:44:17,546 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/config.yaml config.yaml
+2024-06-12 15:44:17,567 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-metadata.json wandb-metadata.json
+2024-06-12 15:44:17,569 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/conda-environment.yaml conda-environment.yaml
+2024-06-12 15:44:17,571 INFO    SenderThread:304885 [dir_watcher.py:finish():402] scan save: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log output.log
+2024-06-12 15:44:17,576 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 10
+2024-06-12 15:44:17,577 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: poll_exit
+2024-06-12 15:44:17,582 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:17,583 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 10
+2024-06-12 15:44:17,630 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:17,630 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-06-12 15:44:17,631 INFO    SenderThread:304885 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-12 15:44:18,174 INFO    wandb-upload_1:304885 [upload_job.py:push():130] Uploaded file /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/conda-environment.yaml
+2024-06-12 15:44:18,498 INFO    wandb-upload_0:304885 [upload_job.py:push():130] Uploaded file /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/wandb-summary.json
+2024-06-12 15:44:18,507 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 15:44:18,519 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: poll_exit
+2024-06-12 15:44:18,849 INFO    wandb-upload_2:304885 [upload_job.py:push():130] Uploaded file /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/requirements.txt
+2024-06-12 15:44:18,854 INFO    wandb-upload_4:304885 [upload_job.py:push():130] Uploaded file /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/output.log
+2024-06-12 15:44:18,876 INFO    wandb-upload_3:304885 [upload_job.py:push():130] Uploaded file /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/files/config.yaml
+2024-06-12 15:44:19,079 INFO    Thread-11 :304885 [sender.py:transition_state():613] send defer: 11
+2024-06-12 15:44:19,083 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:19,084 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 11
+2024-06-12 15:44:19,089 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:19,089 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-06-12 15:44:19,090 INFO    SenderThread:304885 [file_pusher.py:join():175] waiting for file pusher
+2024-06-12 15:44:19,099 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 12
+2024-06-12 15:44:19,101 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:19,102 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 12
+2024-06-12 15:44:19,104 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:19,104 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-06-12 15:44:19,104 INFO    SenderThread:304885 [file_stream.py:finish():601] file stream finish called
+2024-06-12 15:44:19,545 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 15:44:19,973 INFO    SenderThread:304885 [file_stream.py:finish():605] file stream finish is done
+2024-06-12 15:44:19,974 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 13
+2024-06-12 15:44:19,975 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: poll_exit
+2024-06-12 15:44:19,977 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:19,977 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 13
+2024-06-12 15:44:19,979 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:19,980 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-06-12 15:44:19,981 INFO    SenderThread:304885 [sender.py:transition_state():613] send defer: 14
+2024-06-12 15:44:19,983 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 15:44:19,983 INFO    HandlerThread:304885 [handler.py:handle_request_defer():184] handle defer: 14
+2024-06-12 15:44:19,985 DEBUG   SenderThread:304885 [sender.py:send():378] send: final
+2024-06-12 15:44:19,986 DEBUG   SenderThread:304885 [sender.py:send():378] send: footer
+2024-06-12 15:44:19,986 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: defer
+2024-06-12 15:44:19,986 INFO    SenderThread:304885 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-06-12 15:44:19,989 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 15:44:19,998 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: poll_exit
+2024-06-12 15:44:20,004 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 15:44:20,007 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: poll_exit
+2024-06-12 15:44:20,012 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: server_info
+2024-06-12 15:44:20,015 DEBUG   SenderThread:304885 [sender.py:send_request():405] send_request: server_info
+2024-06-12 15:44:20,037 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: get_summary
+2024-06-12 15:44:20,044 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: sampled_history
+2024-06-12 15:44:20,051 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-12 15:44:20,287 INFO    MainThread:304885 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-06-12 15:44:20,295 INFO    MainThread:304885 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-06-12 15:44:20,300 INFO    MainThread:304885 [wandb_run.py:_footer_sync_info():3953] logging synced files
+2024-06-12 15:44:20,318 DEBUG   HandlerThread:304885 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-12 15:44:20,319 INFO    HandlerThread:304885 [handler.py:finish():882] shutting down handler
+2024-06-12 15:44:21,015 INFO    WriterThread:304885 [datastore.py:close():296] close: /home/carlotta/Project/wandb/run-20240612_154300-wz3vg6dh/run-wz3vg6dh.wandb
+2024-06-12 15:44:21,285 INFO    SenderThread:304885 [sender.py:finish():1545] shutting down sender
+2024-06-12 15:44:21,285 INFO    SenderThread:304885 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-12 15:44:21,285 INFO    SenderThread:304885 [file_pusher.py:join():175] waiting for file pusher

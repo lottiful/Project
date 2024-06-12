@@ -1,0 +1,35 @@
+2024-06-12 12:10:07,340 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Configure stats pid to 300757
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Loading settings from /home/carlotta/.config/wandb/settings
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Loading settings from /home/carlotta/Project/wandb/settings
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'test_sb3.py', 'program_abspath': '/home/carlotta/Project/test_sb3.py', 'program': 'test_sb3.py'}
+2024-06-12 12:10:07,341 INFO    MainThread:300757 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:_log_setup():520] Logging user logs to /home/carlotta/Project/wandb/run-20240612_121007-lmgev2kj/logs/debug.log
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:_log_setup():521] Logging internal logs to /home/carlotta/Project/wandb/run-20240612_121007-lmgev2kj/logs/debug-internal.log
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:init():560] calling init triggers
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {}
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:init():610] starting backend
+2024-06-12 12:10:07,342 INFO    MainThread:300757 [wandb_init.py:init():614] setting up manager
+2024-06-12 12:10:07,351 INFO    MainThread:300757 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-06-12 12:10:07,353 INFO    MainThread:300757 [wandb_init.py:init():622] backend started and connected
+2024-06-12 12:10:07,490 INFO    MainThread:300757 [wandb_init.py:init():711] updated telemetry
+2024-06-12 12:10:07,799 INFO    MainThread:300757 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-06-12 12:10:08,658 INFO    MainThread:300757 [wandb_run.py:_on_init():2396] communicating current version
+2024-06-12 12:10:08,777 INFO    MainThread:300757 [wandb_run.py:_on_init():2405] got version response upgrade_message: "wandb version 0.17.1 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-06-12 12:10:08,780 INFO    MainThread:300757 [wandb_init.py:init():795] starting run threads in backend
+2024-06-12 12:10:17,103 INFO    MainThread:300757 [wandb_run.py:_console_start():2374] atexit reg
+2024-06-12 12:10:17,104 INFO    MainThread:300757 [wandb_run.py:_redirect():2229] redirect: wrap_raw
+2024-06-12 12:10:17,105 INFO    MainThread:300757 [wandb_run.py:_redirect():2294] Wrapping output streams.
+2024-06-12 12:10:17,105 INFO    MainThread:300757 [wandb_run.py:_redirect():2319] Redirects installed.
+2024-06-12 12:10:17,108 INFO    MainThread:300757 [wandb_init.py:init():838] run started, returning control to user process
+2024-06-12 12:10:17,119 INFO    MainThread:300757 [wandb_run.py:_finish():2103] finishing run mldlcarlotta/calGTT/lmgev2kj
+2024-06-12 12:10:17,119 INFO    MainThread:300757 [wandb_run.py:_atexit_cleanup():2343] got exitcode: 0
+2024-06-12 12:10:17,120 INFO    MainThread:300757 [wandb_run.py:_restore():2326] restore
+2024-06-12 12:10:17,120 INFO    MainThread:300757 [wandb_run.py:_restore():2332] restore done
+2024-06-12 12:10:22,020 INFO    MainThread:300757 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-06-12 12:10:22,021 INFO    MainThread:300757 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-06-12 12:10:22,043 INFO    MainThread:300757 [wandb_run.py:_footer_sync_info():3953] logging synced files

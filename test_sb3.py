@@ -39,8 +39,8 @@ def main():
 	wandb.init(project="calGTT", name="PPO_test")
 
 	#choose the model to test
-	#model = PPO.load("ppo_model_")
-	model = PPO.load("ppo_model_UDR_")
+	model = PPO.load("ppo_model_")
+	#model = PPO.load("ppo_model_UDR_")
 	#model = PPO.load("ppo_model_DDR_")
 
 	#parametro di inclinazione dell'angolo
