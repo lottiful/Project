@@ -122,7 +122,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         return ob, reward, done, {}
 
 
-    def modify_rand_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold):
+    def initialize_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold):
         self.rand_masses = rand_masses
         self.rand_angle = rand_angle
         self.inclination_angle = inclination_angle
@@ -130,9 +130,9 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.dynamic_rand = dynamic_rand
         self.performance_threshold = performance_threshold
 
-        if self.inclination_angle != 0:
-            self.modify_xml_for_inclination()
-            self.build_model()
+    
+        self.modify_xml_for_inclination()
+        self.build_model()
 
 
 
@@ -200,11 +200,6 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
             self.performance_threshold = max(0, self.performance_threshold)
 
-
-    def initialize_randomization_parameters(self, performance_threshold, randomization_scale=1.0):
-        """Initialize parameters for dynamic randomization"""
-        self.performance_threshold = performance_threshold
-        self.randomization_scale = randomization_scale
 
 
     def viewer_setup(self):

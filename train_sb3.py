@@ -64,8 +64,7 @@ def main():
         randomization_range = 0.5
         #decidere se utilizzare un angolo specifico di partenza
         inclination_angle = 0
-        #ho aggiunto questo da verificare non c'è funzione 
-        #train_env.modify_inclination(inclination_angle)
+      
         #decidere se fare la DDR
         performance_threshold=50
         dynamic_rand = False
@@ -78,10 +77,11 @@ def main():
         model.learn(total_timesteps=int(n_episodes))
 
         #If the model is trained with the randomization of the angle, reset the xml file with starting angle uqual to 0.
-    
-        if train_env.rand_angle != 0:
+        '''
+        if train_env.rand_angle is True:
             train_env.inclination_angle = 0
             train_env.modify_xml_for_inclination()
+        '''
 
         mean_reward, std_reward = evaluate_policy(model, train_env, n_eval_episodes=30)
         model_performance = []
