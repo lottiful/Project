@@ -1,8 +1,3 @@
-"""Implementation of the Hopper environment supporting
-domain randomization optimization.
-    
-    See more at: https://www.gymlibrary.dev/environments/mujoco/hopper/
-"""
 from copy import deepcopy
 
 import numpy as np
@@ -19,25 +14,25 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
         self.original_masses = np.copy(self.sim.model.body_mass[1:])    # Default link masses
 
-        #bound uniziali uniforme
+        #starting bounds of the uniform 
         self.randomization_range = 0.5 
-        #moltiplicatore del randomization range per ADR
+        #multiplying factor for the DDR randomization range
         self.randomization_scale_ang = 1
         self.randomization_scale_mass = 1
-        #raccolta dei reward
+        
+        #Rewards' history
         self.performance_history = []
 
         if domain == 'source':  # Source environment has an imprecise torso mass (1kg shift)
             self.sim.model.body_mass[1] -= 1.0
-        
-        #self.modify_xml_for_inclination()
 
 
     def modify_xml_for_inclination(self):
+        """Modify the xml file to modify the inclination angle of the environment"""
         with open('env_randomization/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
-            # Calcola il quaternione per l'inclinazione
+            # Compute the quaternion that corresponds to the angle
             alpha = np.deg2rad(self.inclination_angle)
             w = np.cos(alpha / 2)
             x = 0
@@ -67,10 +62,6 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
 
     def sample_parameters(self):
         """Sample masses according to a domain randomization distribution"""
-
-        #
-        # TASK 6: implement domain randomization. Remember to sample new dynamics parameter
-        #         at the start of each training episode.
 
         randomization_range = self.randomization_scale_mass * self.randomization_range  # Adjust scale
         new_masses = [np.random.uniform(m - randomization_range, m + randomization_range) for m in self.original_masses[1:]]
@@ -103,7 +94,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
 
-        #reward is given by the horizontal speed is the plane is flat, by the diagonal speed if the plane is inclined.
+        #Compute the reward
         if self.inclination_angle == 0:
             reward = (posafter - posbefore) / self.dt
         else:
@@ -122,7 +113,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         return ob, reward, done, {}
 
 
-    def initialize_paramether(self, rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold):
+    def initialize_parameter(self, rand_masses, rand_angle, inclination_angle, randomization_range, dynamic_rand, performance_threshold):
+        """Set starting parameters"""
         self.rand_masses = rand_masses
         self.rand_angle = rand_angle
         self.inclination_angle = inclination_angle
@@ -130,11 +122,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.dynamic_rand = dynamic_rand
         self.performance_threshold = performance_threshold
 
-    
         self.modify_xml_for_inclination()
         self.build_model()
-
-
 
     def _get_obs(self):
         """Get current state"""
@@ -142,7 +131,6 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             self.sim.data.qpos.flat[1:],
             self.sim.data.qvel.flat
         ])
-
 
     def reset_model(self):
         """Reset the environment to a random initial state"""
@@ -165,30 +153,23 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def dynamic_randomization(self):
-        """Adaptive domain randomization based on performance feedback"""
+        """Dynamic domain randomization based on performance feedback"""
     
         if len(self.performance_history) > 10:  # Ensure enough data points
             recent_performance = np.mean(self.performance_history[-10:])
 
-            #alza o abbassa la randomization scale se si è tanto sotto/sopra. Se si è in un range intemedio allora non cambia.
             if recent_performance > self.performance_threshold + 20:
                 # Increase randomization
                 self.randomization_scale_mass *= 1.05
                 self.randomization_scale_mass = min(self.randomization_scale_mass, 3)
                 self.randomization_scale_ang *= 1.05
                 self.randomization_scale_ang = min(self.randomization_scale_ang, 10)
-                print("alza")
             if recent_performance < self.performance_threshold - 20:
                 # Decrease randomization
                 self.randomization_scale_mass *= 0.95
                 self.randomization_scale_mass = max(self.randomization_scale_mass, 0.5)
                 self.randomization_scale_ang *= 0.95
                 self.randomization_scale_ang = max(self.randomization_scale_ang, 0.1)
-                print("abbassa")
-
-            print(f"recent_performance = {recent_performance}")
-            print(f"rand scxale = {self.randomization_scale_mass}")
-            print(f"rand scxale = {self.randomization_scale_ang}")
 
             # update the treshold
             if recent_performance > self.performance_threshold + 35:

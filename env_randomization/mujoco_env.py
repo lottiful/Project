@@ -57,7 +57,6 @@ class MujocoEnv(gym.Env):
         self.dynamic_rand = False
 
         self.inclination_angle = 0
-
         self.episode_reward = 0
 
         self._set_action_space()

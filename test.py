@@ -1,4 +1,3 @@
-"""Test an RL agent on the OpenAI Gym Hopper environment"""
 import argparse
 
 import torch
@@ -36,14 +35,12 @@ def main():
 	observation_space_dim = env.observation_space.shape[-1]
 	action_space_dim = env.action_space.shape[-1]
 
-	args.model = "model.mdl"
+	args.model = "modelAC.mdl"
 	policy = Policy(observation_space_dim, action_space_dim)
 	policy_critic = Policy_critic(observation_space_dim, action_space_dim)
 	policy.load_state_dict(torch.load(args.model), strict=True)
 
-	
-	#Cambiare il name in base a cosa si sta testando, così rimangono tutte le tabelle con i nomi giusti.
-	wandb.init(project="calGTT", name="REINFORCEb0_test")
+	wandb.init(project="calGTT", name="AC_test")
 
 	agent = Agent(policy, policy_critic, device=args.device)
 
@@ -65,7 +62,7 @@ def main():
 
 			test_reward += reward
 		
-		wandb.log({"Reward": test_reward})
+		wandb.log({"Reward test": test_reward})
 		list_rewards.append(test_reward)
 		print(f"Episode: {episode} | Return: {test_reward}")
 	
@@ -79,7 +76,7 @@ def main():
 
 	wandb.init(project="calGTT", name="mean")
 	for i in range(50):
-		wandb.log({"Reward": mean_reward})
+		wandb.log({"Reward test": mean_reward})
 	wandb.finish()
 
 if __name__ == '__main__':

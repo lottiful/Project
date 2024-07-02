@@ -1,4 +1,3 @@
-"""Test an RL agent on the OpenAI Gym Hopper environment"""
 import argparse
 
 import torch
@@ -8,7 +7,6 @@ from env_test.custom_hopper import *
 from stable_baselines3 import PPO
 
 import numpy as np
-
 import wandb
 
 def parse_args():
@@ -25,8 +23,8 @@ args = parse_args()
 
 def main():
 
-	env = gym.make('CustomHopper-source-v0')
-	#env = gym.make('CustomHopper-target-v0')
+	#env = gym.make('CustomHopper-source-v0')
+	env = gym.make('CustomHopper-target-v0')
 
 	print('Action space:', env.action_space)
 	print('State space:', env.observation_space)
@@ -35,16 +33,13 @@ def main():
 	observation_space_dim = env.observation_space.shape[-1]
 	action_space_dim = env.action_space.shape[-1]
 
-	#MODIFICARE IL NOMEeeeeeeeeeeeeeeeeeee
-	wandb.init(project="calGTT", name="PPO_test")
+	wandb.init(project="calGTT", name="Reward_UDR")
 
 	#choose the model to test
-	model = PPO.load("ppo_model_")
-	#model = PPO.load("ppo_model_UDR_")
-	#model = PPO.load("ppo_model_DDR_")
+	model = PPO.load("ppo_model_UDR")
 
-	#parametro di inclinazione dell'angolo
-	inclination_angle = -20
+	#set the starting inclination angle
+	inclination_angle = 0
 	env.modify_inclination(inclination_angle)
 
 	list_rewards = []
@@ -56,7 +51,7 @@ def main():
 
 		while not done:
 
-			action, _ = model.predict(state, deterministic=True) #si potrebbe mettere: determinist = True (non e qua)
+			action, _ = model.predict(state, deterministic=True)
 
 			state, reward, done, info = env.step(action)
 
@@ -65,7 +60,7 @@ def main():
 
 			test_reward += reward
 
-		wandb.log({"Reward": test_reward})
+		wandb.log({"Reward_UDR": test_reward})
 
 		list_rewards.append(test_reward)
 
@@ -79,9 +74,9 @@ def main():
 
 	wandb.finish()
 
-	wandb.init(project="calGTT", name="mean")
+	wandb.init(project="calGTT", name="mean_UDR")
 	for i in range(50):
-		wandb.log({"Reward": mean_reward})
+		wandb.log({"Reward_UDR": mean_reward})
 	wandb.finish()
 
 

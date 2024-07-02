@@ -1,8 +1,3 @@
-"""Implementation of the Hopper environment supporting
-domain randomization optimization.
-    
-    See more at: https://www.gymlibrary.dev/environments/mujoco/hopper/
-"""
 from copy import deepcopy
 
 import numpy as np
@@ -24,11 +19,11 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             self.sim.model.body_mass[1] -= 1.0
 
     def modify_xml_for_inclination(self):
-        print("entra nella modifica xml")
+        """Modify the xml file to modify the inclination angle of the environment"""
         with open('env_test/assets/hopper.xml', 'r') as file:
             xml_content = file.read()
 
-            # Calcola il quaternione per l'inclinazione
+            # Compute the quaternion that corresponds to the angle
             alpha = np.deg2rad(self.inclination_angle)
             w = np.cos(alpha / 2)
             x = 0
@@ -41,9 +36,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
             file.write(xml_content)
 
     def modify_inclination(self, inclination_angle):
+        """Build the model with the new angle"""
         self.inclination_angle = inclination_angle
-
-        #if self.inclination_angle != 0:
         self.modify_xml_for_inclination()
         self.build_model()
 
@@ -84,6 +78,8 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         self.do_simulation(a, self.frame_skip)
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
+
+        #Compute the reward
         if self.inclination_angle == 0:
             reward = (posafter - posbefore) / self.dt
         else:
@@ -92,6 +88,7 @@ class CustomHopper(MujocoEnv, utils.EzPickle):
         reward -= 1e-3 * np.square(a).sum()
         s = self.state_vector()
 
+        #Set conditions for Done
         if self.inclination_angle == 0:
             done = not (np.isfinite(s).all() and (np.abs(s[2:]) < 100).all() and (height > .7) and (abs(ang) < .2))
         else:

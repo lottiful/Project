@@ -1,6 +1,3 @@
-"""Train an RL agent on the OpenAI Gym Hopper environment using
-    REINFORCE and Actor-critic algorithms
-"""
 import argparse
 
 import torch
@@ -15,7 +12,7 @@ import wandb
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--n-episodes', default=2000, type=int, help='Number of training episodes')
+    parser.add_argument('--n-episodes', default=50000, type=int, help='Number of training episodes')
     parser.add_argument('--print-every', default=400, type=int, help='Print info every <> episodes')
     parser.add_argument('--device', default='cpu', type=str, help='network device [cpu, cuda]')
 
@@ -33,10 +30,10 @@ def main():
 	print('State space:', env.observation_space)
 	print('Dynamics parameters:', env.get_parameters())
 
+	inclination_angle = 0
+	env.modify_inclination(inclination_angle)
 
-	"""
-		Training
-	"""
+	#Training
 	observation_space_dim = env.observation_space.shape[-1]
 	action_space_dim = env.action_space.shape[-1]
 
@@ -44,17 +41,11 @@ def main():
 	policy_critic = Policy_critic(observation_space_dim, 1)
 	agent = Agent(policy, policy_critic, device=args.device)
 
-    #
-    # TASK 2 and 3: interleave data collection to policy updates
-    #
-
 	#Reinforce -> critic = False; Actor-critic -> critic = True
-	critic = False
+	critic = True
+
+	wandb.init(project="calGTT", name="AC_train")
 	i = 0
-
-	#sistemare il nome ogni volta
-	wandb.init(project="calGTT", name="REINFORCEb0_train")
-
 	start_time = timer()
 
 	for episode in range(args.n_episodes):
@@ -76,24 +67,20 @@ def main():
 				if done == True:
 					agent.update_policy(critic)
 			else:
-				if (i%50 == 0) and (i!=0): #update the policy every 50 steps, a prescindere dall'episodio (i cumulativa esterna)
+				if ((i%30 == 0) and (i!=0)): #update the policy every 30 steps, regardless of the episode
 					agent.update_policy(critic)
 			i +=1
 
-		wandb.log({"Reward": train_reward})
+		wandb.log({"Reward_AC": train_reward})
 		
 	
 	wandb.finish()
-		
-	if (episode+1)%args.print_every == 0:
-		print('Training episode:', episode)
-		print('Episode return:', train_reward)
 
 	end_time = timer()
 	total_time = end_time-start_time
 	print ('total time = ',total_time)
 
-	torch.save(agent.policy.state_dict(), "model.mdl")
+	torch.save(agent.policy.state_dict(), "modelAC.mdl")
 
 	
 
