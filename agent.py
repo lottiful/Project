@@ -144,7 +144,7 @@ class Agent(object):
             j = 0
             for log_prob, state, next_state in zip(action_log_probs, states, next_states):
                 v_t =  self.policy_critic(state)
-                v_next = self.policy_critic(next_state)
+                v_next = (1-done[j])*self.policy_critic(next_state)
 
                 #actor
                 actor_G = rewards[j] + self.gamma * v_next
